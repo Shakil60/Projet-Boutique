@@ -1,11 +1,15 @@
 const express = require('express')
+const cors = require('cors')
+
 const app = express()
 const port = 3000
 
-const cors = require('cors')
-app.use(cors({origin: '*'}))
+app.use(cors({ origin: '*' }))
+app.use(express.json())
 
-const studentRouter = require('./router/students')
-app.use(studentRouter)
+const shopRouter = require('./router/shop')
+app.use(shopRouter)
 
-app.listen(port, () => console.log('Server listening on port 3000!'))
+app.listen(port, () => {
+    console.log('API MIRAGE en ligne sur le port ' + port)
+})

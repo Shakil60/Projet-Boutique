@@ -1,0 +1,14 @@
+{
+  "name": "mirage-backend",
+  "version": "1.0.0",
+  "description": "API du Y-Shop MIRAGE",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}
