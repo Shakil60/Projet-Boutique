@@ -1,11 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Page d'accueil</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MIRAGE — catalogue</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <button class="btn">Test</button>
+
+<header class="site-header">
+    <div class="inner">
+        <a href="./index.html" class="brand">
+            MIRAGE<span class="tag">wear the dream.</span>
+        </a>
+        <nav class="nav">
+            <a href="./index.html">Catalogue</a>
+            <a href="./favoris.html">Favoris<span class="badge empty" data-badge="fav">0</span></a>
+            <a href="./panier.html">Panier<span class="badge empty" data-badge="cart">0</span></a>
+        </nav>
+    </div>
+</header>
+
+<main class="page">
+    <h1 class="page-title">Catalogue</h1>
+    <p class="page-sub">T-shirts streetwear, prints en édition courte. <span id="count"></span></p>
+
+    <div class="toolbar">
+        <div class="group">
+            <label for="f-gender">Genre</label>
+            <select id="f-gender">
+                <option value="">tous</option>
+                <option value="unisexe">unisexe</option>
+                <option value="femme">femme</option>
+                <option value="homme">homme</option>
+            </select>
+        </div>
+        <div class="group">
+            <label for="f-type">Type</label>
+            <select id="f-type">
+                <option value="">tous</option>
+                <option value="graphique">graphique</option>
+                <option value="typo">typo</option>
+                <option value="minimal">minimal</option>
+            </select>
+        </div>
+        <div class="group">
+            <label for="f-color">Couleur</label>
+            <select id="f-color">
+                <option value="">toutes</option>
+                <option value="noir">noir</option>
+                <option value="blanc">blanc</option>
+                <option value="sand">sand</option>
+            </select>
+        </div>
+        <div class="group">
+            <label for="f-size">Taille</label>
+            <select id="f-size">
+                <option value="">toutes</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
+            </select>
+        </div>
+        <div class="group price-range">
+            <label for="f-min">Prix</label>
+            <input type="number" id="f-min" placeholder="min" min="0" aria-label="prix minimum">
+            <span aria-hidden="true">—</span>
+            <input type="number" id="f-max" placeholder="max" min="0" aria-label="prix maximum">
+        </div>
+        <div class="group">
+            <label for="f-sort">Trier</label>
+            <select id="f-sort">
+                <option value="">par défaut</option>
+                <option value="price_asc">prix croissant</option>
+                <option value="price_desc">prix décroissant</option>
+                <option value="name">nom A-Z</option>
+            </select>
+        </div>
+        <button class="reset" id="reset">tout réinitialiser</button>
+    </div>
+
+    <div class="grid" id="grid"></div>
+    <div class="empty-state" id="empty" hidden>Aucun produit ne correspond à ces filtres.</div>
+</main>
+
+<footer class="site-footer">
+    © MIRAGE — projet Y-Shop
+</footer>
+
+<script src="./common.js"></script>
 <script src="./script.js"></script>
 </body>
 </html>
