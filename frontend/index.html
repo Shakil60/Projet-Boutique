@@ -1,11 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Page d'accueil</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique Gaming</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <button class="btn">Test</button>
-<script src="./script.js"></script>
+    <main>
+        <section class="hero">
+            <h1>Bienvenue sur la boutique</h1>
+            <p>Decouvrez une selection simple de produits gaming disponible directement depuis votre serveur local.</p>
+        </section>
+
+        <section>
+            <p class="status" id="status">Chargement des produits...</p>
+            <div class="items" id="items"></div>
+        </section>
+    </main>
+    <script src="./script.js"></script>
 </body>
 </html>
