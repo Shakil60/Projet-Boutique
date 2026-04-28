@@ -1,3 +1,21 @@
 # dependencies
 node_modules/
 backend/node_modules/
+automation/node_modules/
+
+# env
+.env
+.env.local
+**/.env
+
+# notes perso
+NOTES.md
+*.local.md
+
+# OS
+.DS_Store
+Thumbs.db
+
+# editor
+.vscode/
+.idea/
