@@ -1,3 +1,31 @@
 {
-  
+  "items": [
+    {
+      "id": 1,
+      "name": "Item 1",
+      "price": 100,
+      "description": "Description of Item 1",
+      "image": "../static/images/item1.jpg",
+      "category": "Games",
+      "stock": 10
+    },
+    {
+      "id": 2,
+      "name": "Item 2",
+      "price": 200,
+      "description": "Description of Item 2",
+      "image": "../static/images/item2.jpg",
+      "category": "Games",
+      "stock": 15
+    },
+    {
+      "id": 3,
+      "name": "Item 3",
+      "price": 300,
+      "description": "Description of Item 3",
+      "image": "../static/images/item3.jpg",
+      "category": "Games",
+      "stock": 20
+    }
+  ]
 }

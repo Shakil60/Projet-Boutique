@@ -5,7 +5,7 @@ const port = 3000
 const cors = require('cors')
 app.use(cors({origin: '*'}))
 
-const studentRouter = require('./router/students')
-app.use(studentRouter)
+const shopRouter = require('./router/shop')
+app.use(shopRouter)
 
 app.listen(port, () => console.log('Server listening on port 3000!'))
