@@ -1,0 +1,11 @@
+{
+  "name": "mirage-automation",
+  "version": "0.1.0",
+  "description": "Pipeline bonus : génération automatisée de produits MIRAGE via IA",
+  "main": "generate.js",
+  "scripts": {
+    "demo": "node generate.js --theme \"forêt cybernétique\" --mock",
+    "generate": "node generate.js"
+  },
+  "type": "commonjs"
+}
