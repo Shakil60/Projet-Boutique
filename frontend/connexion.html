@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MIRAGE — produit</title>
+    <title>MIRAGE — connexion</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -22,13 +22,23 @@
     </div>
 </header>
 
-<main class="page">
-    <div id="root"><!-- rempli en JS une fois le produit récupéré --></div>
+<main class="page page-narrow">
+    <h1 class="page-title">Connexion</h1>
+    <p class="page-sub">Connecte-toi pour passer commande et retrouver tes favoris.</p>
 
-    <section class="similar-section" id="similar-section" hidden>
-        <h2>Vous aimerez aussi</h2>
-        <div class="grid" id="similar-grid"></div>
-    </section>
+    <form class="auth-form" id="login-form" novalidate>
+        <label>
+            <span>Email</span>
+            <input type="email" name="email" required autocomplete="email">
+        </label>
+        <label>
+            <span>Mot de passe</span>
+            <input type="password" name="password" required autocomplete="current-password">
+        </label>
+        <div class="form-error" id="error" hidden></div>
+        <button type="submit" class="btn btn-block">Se connecter</button>
+        <p class="form-foot">Pas encore de compte ? <a href="./inscription.html">Crée-en un</a></p>
+    </form>
 </main>
 
 <footer class="site-footer">
@@ -36,6 +46,6 @@
 </footer>
 
 <script src="./common.js"></script>
-<script src="./produit.js"></script>
+<script src="./auth.js"></script>
 </body>
 </html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MIRAGE — inscription</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="inner">
+        <a href="./index.html" class="brand">
+            MIRAGE<span class="tag">wear the dream.</span>
+        </a>
+        <nav class="nav">
+            <a href="./index.html">Catalogue</a>
+            <a href="./favoris.html">Favoris<span class="badge empty" data-badge="fav">0</span></a>
+            <a href="./panier.html">Panier<span class="badge empty" data-badge="cart">0</span></a>
+            <span class="nav-auth" data-auth-slot></span>
+        </nav>
+    </div>
+</header>
+
+<main class="page page-narrow">
+    <h1 class="page-title">Créer un compte</h1>
+    <p class="page-sub">Pour suivre tes commandes et garder tes favoris d'un appareil à l'autre.</p>
+
+    <form class="auth-form" id="signup-form" novalidate>
+        <label>
+            <span>Nom</span>
+            <input type="text" name="name" required autocomplete="name">
+        </label>
+        <label>
+            <span>Email</span>
+            <input type="email" name="email" required autocomplete="email">
+        </label>
+        <label>
+            <span>Mot de passe</span>
+            <input type="password" name="password" required minlength="6" autocomplete="new-password">
+        </label>
+        <div class="form-error" id="error" hidden></div>
+        <button type="submit" class="btn btn-block">Créer le compte</button>
+        <p class="form-foot">Tu as déjà un compte ? <a href="./connexion.html">Connecte-toi</a></p>
+    </form>
+</main>
+
+<footer class="site-footer">
+    © MIRAGE — projet Y-Shop
+</footer>
+
+<script src="./common.js"></script>
+<script src="./auth.js"></script>
+</body>
+</html>
