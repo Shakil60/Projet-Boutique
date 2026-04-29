@@ -1,0 +1,12 @@
+{
+  "users": [
+    {
+      "id": "admin-1",
+      "email": "admin@mirage.fr",
+      "password": "admin123",
+      "name": "Admin",
+      "role": "admin",
+      "createdAt": "2026-04-29T10:00:00.000Z"
+    }
+  ]
+}
