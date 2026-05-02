@@ -229,9 +229,96 @@ function showToast(msg) {
     toastTimer = setTimeout(() => el.classList.remove('show'), 2200)
 }
 
+// ---- recherche header (autocomplete) ----
+
+// on injecte la barre de recherche dans le header de chaque page sans avoir à
+// la dupliquer dans tous les .html. plus pratique à maintenir.
+function injectSearchBar() {
+    const headerInner = document.querySelector('.site-header .inner')
+    if (!headerInner || headerInner.querySelector('.header-search')) return
+
+    const wrap = document.createElement('div')
+    wrap.className = 'header-search'
+    wrap.innerHTML = `
+        <input type="search" placeholder="rechercher un design…" data-search-input>
+        <div class="search-results" data-search-results hidden></div>
+    `
+    const brand = headerInner.querySelector('.brand')
+    brand.insertAdjacentElement('afterend', wrap)
+    wireSearch(wrap)
+}
+
+function wireSearch(wrap) {
+    const input = wrap.querySelector('[data-search-input]')
+    const out = wrap.querySelector('[data-search-results]')
+    let timer = null
+
+    input.addEventListener('input', () => {
+        clearTimeout(timer)
+        const q = input.value.trim()
+        if (q.length < 2) {
+            out.hidden = true
+            out.innerHTML = ''
+            return
+        }
+        timer = setTimeout(() => doSearch(q, out), 250)
+    })
+
+    input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            const q = input.value.trim()
+            if (q) location.href = './index.html?search=' + encodeURIComponent(q)
+        }
+        if (e.key === 'Escape') { out.hidden = true; input.blur() }
+    })
+
+    // si on clique en dehors on ferme
+    document.addEventListener('click', (e) => {
+        if (!wrap.contains(e.target)) out.hidden = true
+    })
+    input.addEventListener('focus', () => {
+        if (out.innerHTML) out.hidden = false
+    })
+}
+
+async function doSearch(q, out) {
+    try {
+        const list = await api('/products?search=' + encodeURIComponent(q) + '&limit=5')
+        const items = Array.isArray(list) ? list : (list.items || [])
+        if (items.length === 0) {
+            out.innerHTML = '<div class="search-empty">aucun résultat</div>'
+        } else {
+            out.innerHTML = items.map(p => `
+                <a href="./produit.html?id=${encodeURIComponent(p.id)}" class="search-item">
+                    <img src="${p.images[0]}" alt="">
+                    <div class="search-item-info">
+                        <div class="search-item-name">${escapeText(p.name)}</div>
+                        <div class="search-item-meta">${p.gender} · ${p.type}</div>
+                    </div>
+                    <div class="search-item-price">${formatPrice(p.price)}</div>
+                </a>
+            `).join('') + `
+                <a href="./index.html?search=${encodeURIComponent(q)}" class="search-more">voir tous les résultats →</a>
+            `
+        }
+        out.hidden = false
+    } catch (e) {
+        out.innerHTML = '<div class="search-empty">erreur</div>'
+        out.hidden = false
+    }
+}
+
+// petit helper pour ne pas injecter du HTML brut depuis une recherche
+function escapeText(s) {
+    const div = document.createElement('div')
+    div.textContent = String(s)
+    return div.innerHTML
+}
+
 // au chargement on met les badges à jour, comme ça si on revient sur le site
 // avec un panier en cours, le compteur est correct dès la première frame
 document.addEventListener('DOMContentLoaded', () => {
     updateBadges()
     updateHeaderAuth()
+    injectSearchBar()
 })
