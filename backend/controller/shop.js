@@ -50,6 +50,22 @@ exports.getAll = function (req, res) {
     else if (q.sort === 'price_desc') list.sort((a, b) => b.price - a.price)
     else if (q.sort === 'name') list.sort((a, b) => a.name.localeCompare(b.name))
 
+    // pagination — si limit est fourni, on renvoie un objet avec total + items + hasMore.
+    // sinon on garde le comportement initial (juste un tableau).
+    if (q.limit) {
+        const limit = Math.max(1, Math.min(100, Number(q.limit)))
+        const offset = Math.max(0, Number(q.offset) || 0)
+        const total = list.length
+        const items = list.slice(offset, offset + limit)
+        return res.json({
+            items,
+            total,
+            offset,
+            limit,
+            hasMore: offset + items.length < total
+        })
+    }
+
     res.json(list)
 }
 
