@@ -178,7 +178,7 @@ function updateHeaderAuth() {
     const u = currentUser()
     if (u) {
         slot.innerHTML = `
-            <a href="./compte.html" title="${u.name}">${u.name.split(' ')[0]}</a>
+            <a href="./commandes.html" title="${u.name} — voir mes commandes">${u.name.split(' ')[0]}</a>
             ${u.role === 'admin' ? '<a href="./admin.html" class="nav-admin">admin</a>' : ''}
             <button class="nav-logout" data-action="logout">déconnexion</button>
         `

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MIRAGE — mes commandes</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="inner">
+        <a href="./index.html" class="brand">
+            MIRAGE<span class="tag">wear the dream.</span>
+        </a>
+        <nav class="nav">
+            <a href="./index.html">Catalogue</a>
+            <a href="./favoris.html">Favoris<span class="badge empty" data-badge="fav">0</span></a>
+            <a href="./panier.html">Panier<span class="badge empty" data-badge="cart">0</span></a>
+            <span class="nav-auth" data-auth-slot></span>
+        </nav>
+    </div>
+</header>
+
+<main class="page">
+    <h1 class="page-title">Mes commandes</h1>
+    <p class="page-sub" id="sub"></p>
+
+    <div id="orders-area"></div>
+</main>
+
+<footer class="site-footer">
+    © MIRAGE — projet Y-Shop
+</footer>
+
+<script src="./common.js"></script>
+<script src="./commandes.js"></script>
+</body>
+</html>

@@ -42,13 +42,12 @@ function render() {
     area.innerHTML = `
         <div class="cart-list">${rowsHtml}</div>
         <div class="cart-summary">
-            <div class="total"><span class="label">total</span>${formatPrice(total)}</div>
-            <button class="btn" id="checkout">Valider la commande</button>
+            <div class="total"><span class="label">sous-total</span>${formatPrice(total)}</div>
+            <a class="btn" href="./checkout.html">passer la commande →</a>
         </div>
     `
 
     bindRows()
-    document.getElementById('checkout').addEventListener('click', checkout)
 }
 
 function bindRows() {
@@ -75,39 +74,5 @@ function bindRows() {
     })
 }
 
-// validation : on décrémente le stock côté API ligne par ligne, puis on vide le panier.
-// si une ligne échoue (genre stock insuffisant entre-temps), on affiche l'erreur
-// et on laisse le panier en place pour que l'utilisateur puisse ajuster.
-async function checkout() {
-    const btn = document.getElementById('checkout')
-    btn.disabled = true
-    btn.textContent = 'Validation…'
-
-    const cart = getCart()
-    console.log('checkout', cart.length, 'lignes')
-    // ancienne version qui faisait tout en parallèle, mais en cas d'erreur
-    // sur une ligne ça décrémentait quand même les autres → on fait en série
-    // const promises = cart.map(it => api('/products/'+it.id+'/stock', {...}))
-    // await Promise.all(promises)
-    try {
-        for (const item of cart) {
-            await api('/products/' + encodeURIComponent(item.id) + '/stock', {
-                method: 'PATCH',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    color: item.color,
-                    size: item.size,
-                    qty: item.qty
-                })
-            })
-        }
-        clearCart()
-        showToast('Commande validée, merci !')
-        render()
-    } catch (e) {
-        const msg = e.body && e.body.error ? e.body.error : 'Erreur pendant la validation'
-        showToast(msg)
-        btn.disabled = false
-        btn.textContent = 'Valider la commande'
-    }
-}
+// note : la validation effective est passée dans la page checkout, ici on garde
+// juste l'affichage du panier et le bouton qui redirige vers checkout.html.
