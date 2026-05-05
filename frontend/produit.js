@@ -32,6 +32,7 @@ async function loadProduct() {
         state.selectedSize = null
         render()
         loadSimilar()
+        loadReviews()
     } catch (e) {
         if (e.status === 404) {
             root.innerHTML = '<p class="empty-state">Produit introuvable.</p>'
@@ -285,4 +286,121 @@ function escapeHtml(s) {
         .replaceAll('&', '&amp;')
         .replaceAll('<', '&lt;')
         .replaceAll('>', '&gt;')
+}
+
+// ---- avis produit ----
+
+async function loadReviews() {
+    const area = document.getElementById('reviews-area')
+    if (!area) return
+    try {
+        const list = await api('/products/' + encodeURIComponent(productId) + '/reviews')
+        renderReviews(list)
+    } catch (e) {
+        area.innerHTML = '<p class="empty-state">avis indisponibles</p>'
+    }
+}
+
+function renderReviews(list) {
+    const area = document.getElementById('reviews-area')
+    const u = currentUser()
+    const myReview = u ? list.find(r => r.userId === u.id) : null
+
+    let avg = 0
+    if (list.length > 0) {
+        avg = list.reduce((s, r) => s + r.rating, 0) / list.length
+        avg = Math.round(avg * 10) / 10
+    }
+
+    const summary = list.length === 0
+        ? '<p class="reviews-empty">Pas encore d\'avis sur ce design. Sois le premier !</p>'
+        : `<div class="reviews-avg">${stars(avg)} <strong>${avg}</strong> <span>· ${list.length} avis</span></div>`
+
+    const formHtml = u ? `
+        <form class="review-form auth-form" id="review-form">
+            <h3>${myReview ? 'Modifier ton avis' : 'Laisser un avis'}</h3>
+            <div class="rating-input" data-rating-input>
+                ${[1,2,3,4,5].map(n => `<button type="button" class="star-btn" data-value="${n}">★</button>`).join('')}
+            </div>
+            <input type="hidden" name="rating" value="${myReview ? myReview.rating : 0}">
+            <label><span>Ton commentaire</span><textarea name="comment" rows="3" required minlength="5" maxlength="600">${myReview ? escapeHtml(myReview.comment) : ''}</textarea></label>
+            <div class="form-error" id="review-error" hidden></div>
+            <button type="submit" class="btn">${myReview ? 'Mettre à jour' : 'Publier'}</button>
+        </form>
+    ` : `<p class="reviews-cta"><a href="./connexion.html">Connecte-toi</a> pour laisser un avis.</p>`
+
+    const listHtml = list.length === 0 ? '' : `
+        <div class="reviews-list">
+            ${list.map(r => `
+                <div class="review">
+                    <div class="review-head">
+                        <strong>${escapeHtml(r.userName || 'Anonyme')}</strong>
+                        <span class="review-stars">${stars(r.rating)}</span>
+                        <span class="review-date">${new Date(r.createdAt).toLocaleDateString('fr-FR')}</span>
+                    </div>
+                    <p class="review-comment">${escapeHtml(r.comment)}</p>
+                </div>
+            `).join('')}
+        </div>
+    `
+
+    area.innerHTML = summary + formHtml + listHtml
+
+    if (u) {
+        const form = document.getElementById('review-form')
+        const ratingInput = form.querySelector('input[name="rating"]')
+        const stars5 = form.querySelectorAll('.star-btn')
+
+        function paint(active) {
+            stars5.forEach((b, i) => b.classList.toggle('active', i < active))
+        }
+        paint(Number(ratingInput.value))
+
+        stars5.forEach((b, i) => {
+            b.addEventListener('mouseenter', () => paint(i + 1))
+            b.addEventListener('mouseleave', () => paint(Number(ratingInput.value)))
+            b.addEventListener('click', () => {
+                ratingInput.value = String(i + 1)
+                paint(i + 1)
+            })
+        })
+
+        form.addEventListener('submit', onReviewSubmit)
+    }
+}
+
+async function onReviewSubmit(e) {
+    e.preventDefault()
+    const form = e.target
+    const errEl = document.getElementById('review-error')
+    const fd = new FormData(form)
+    const rating = Number(fd.get('rating'))
+    const comment = (fd.get('comment') || '').trim()
+
+    if (rating < 1) {
+        errEl.textContent = 'Choisis une note (1 à 5 étoiles)'
+        errEl.hidden = false
+        return
+    }
+
+    try {
+        await api('/products/' + encodeURIComponent(productId) + '/reviews', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ rating, comment })
+        })
+        showToast('avis publié, merci')
+        loadReviews()
+    } catch (err) {
+        errEl.textContent = err.body?.error || err.message
+        errEl.hidden = false
+    }
+}
+
+// petit composant étoiles, accepte une note décimale (genre 4.3)
+function stars(n) {
+    const full = Math.floor(n)
+    const half = n - full >= 0.5 ? 1 : 0
+    const empty = 5 - full - half
+    return '★'.repeat(full) + (half ? '⯨' : '') + '☆'.repeat(empty)
 }
