@@ -5,6 +5,14 @@ const API_URL = 'http://localhost:3000'
 const CART_KEY = 'mirage_cart'
 const FAV_KEY = 'mirage_favs'
 const AUTH_KEY = 'mirage_auth'
+const THEME_KEY = 'mirage_theme'
+
+// applique le thème dès le tout début (avant DOMContentLoaded), sinon on a un
+// flash de blanc pour les utilisateurs en mode sombre
+;(function applyThemeEarly() {
+    const t = localStorage.getItem(THEME_KEY)
+    if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark')
+})()
 
 // petit helper fetch qui retourne déjà du JSON, et qui jette si l'API renvoie pas du 2xx
 async function api(path, options) {
@@ -315,10 +323,54 @@ function escapeText(s) {
     return div.innerHTML
 }
 
+// ---- thème (clair / sombre) ----
+
+function getTheme() {
+    return localStorage.getItem(THEME_KEY) || 'light'
+}
+
+function toggleTheme() {
+    const next = getTheme() === 'dark' ? 'light' : 'dark'
+    localStorage.setItem(THEME_KEY, next)
+    if (next === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark')
+    } else {
+        document.documentElement.removeAttribute('data-theme')
+    }
+    updateThemeButton()
+}
+
+function injectThemeButton() {
+    const headerInner = document.querySelector('.site-header .inner')
+    if (!headerInner || headerInner.querySelector('.theme-toggle')) return
+
+    const btn = document.createElement('button')
+    btn.className = 'theme-toggle'
+    btn.setAttribute('aria-label', 'changer de thème')
+    btn.innerHTML = themeIcon()
+    btn.addEventListener('click', toggleTheme)
+
+    // on l'ajoute juste avant la nav
+    const nav = headerInner.querySelector('.nav')
+    nav.insertAdjacentElement('beforebegin', btn)
+}
+
+function updateThemeButton() {
+    const btn = document.querySelector('.theme-toggle')
+    if (btn) btn.innerHTML = themeIcon()
+}
+
+function themeIcon() {
+    return getTheme() === 'dark'
+        ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="18" height="18"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>'
+        : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="18" height="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>'
+}
+
 // au chargement on met les badges à jour, comme ça si on revient sur le site
 // avec un panier en cours, le compteur est correct dès la première frame
 document.addEventListener('DOMContentLoaded', () => {
     updateBadges()
     updateHeaderAuth()
     injectSearchBar()
+    injectThemeButton()
 })
