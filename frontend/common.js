@@ -205,8 +205,15 @@ function updateBadges() {
 
     if (cartBadge) {
         const n = cartCount()
+        const prev = parseInt(cartBadge.textContent, 10)
         cartBadge.textContent = n
         cartBadge.classList.toggle('empty', n === 0)
+        if (!isNaN(prev) && n > prev) {
+            // petit pop quand le compteur grimpe
+            cartBadge.classList.remove('pulse')
+            void cartBadge.offsetWidth
+            cartBadge.classList.add('pulse')
+        }
     }
     if (favBadge) {
         const n = favCount()
