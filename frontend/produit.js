@@ -82,7 +82,11 @@ function render() {
     let desc = p.description || ''
     let toggleBtn = ''
     if (desc.length > 150 && !state.descExpanded) {
-        desc = desc.slice(0, 150).trimEnd() + '…'
+        // on essaie de couper au dernier espace pour pas tronquer en plein milieu d'un mot
+        let cut = desc.slice(0, 150)
+        const lastSpace = cut.lastIndexOf(' ')
+        if (lastSpace > 100) cut = cut.slice(0, lastSpace)
+        desc = cut.trimEnd() + '…'
         toggleBtn = '<button class="desc-toggle" id="desc-toggle">voir plus</button>'
     } else if (state.descExpanded) {
         toggleBtn = '<button class="desc-toggle" id="desc-toggle">réduire</button>'
