@@ -185,6 +185,13 @@ input, select {
     .header-search { display: none; }
 }
 
+@media (max-width: 480px) {
+    .nav { gap: 14px; }
+    .nav a { font-size: 12px; letter-spacing: 1px; }
+    .nav-auth { padding-left: 10px; margin-left: 2px; }
+    .brand .tag { display: none; }
+}
+
 .theme-toggle {
     background: none;
     border: 1px solid var(--border);
