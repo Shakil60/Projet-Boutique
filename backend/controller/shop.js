@@ -133,38 +133,28 @@ exports.updateStock = function (req, res) {
     res.json({ ok: true, remaining: variant.quantity })
 }
 
-// ---- routes admin (CRUD complet) ----
-
-// helper qui valide les champs minimum d'un produit avant de le sauver
-function validateProduct(p) {
-    const errors = []
-    if (!p.id || typeof p.id !== 'string') errors.push('id requis')
-    if (!p.name || typeof p.name !== 'string') errors.push('name requis')
-    if (!p.description || p.description.length < 50) errors.push('description trop courte (50 mini)')
-    if (typeof p.price !== 'number' || p.price <= 0) errors.push('prix invalide')
-    if (!Array.isArray(p.colors) || p.colors.length === 0) errors.push('au moins une couleur')
-    if (!Array.isArray(p.sizes) || p.sizes.length === 0) errors.push('au moins une taille')
-    if (!Array.isArray(p.images) || p.images.length === 0) errors.push('au moins une image')
-    return errors
-}
+// ---- routes admin ----
 
 // POST /products — admin seulement
 exports.create = function (req, res) {
     const data = readData()
     const body = req.body || {}
 
-    const errors = validateProduct(body)
-    if (errors.length) {
-        return res.status(400).json({ error: 'champs invalides', details: errors })
+    if (!body.id || !body.name || !body.description || !body.price) {
+        return res.status(400).json({ error: 'champs manquants (id, name, description, price)' })
     }
     if (data.products.find(p => p.id === body.id)) {
         return res.status(409).json({ error: 'un produit avec cet id existe déjà' })
     }
 
-    // si pas de stock fourni, on initialise à 0 sur toutes les variantes possibles
+    // si pas de stock fourni, on en met un vide pour chaque variante
     if (!Array.isArray(body.stock)) {
         body.stock = []
-        body.colors.forEach(c => body.sizes.forEach(s => body.stock.push({ color: c, size: s, quantity: 0 })))
+        ;(body.colors || []).forEach(c =>
+            (body.sizes || []).forEach(s =>
+                body.stock.push({ color: c, size: s, quantity: 0 })
+            )
+        )
     }
     if (!body.currency) body.currency = 'EUR'
 
@@ -177,24 +167,18 @@ exports.create = function (req, res) {
 exports.update = function (req, res) {
     const data = readData()
     const idx = data.products.findIndex(p => p.id === req.params.id)
-    if (idx === -1) {
-        return res.status(404).json({ error: 'Produit introuvable' })
-    }
+    if (idx === -1) return res.status(404).json({ error: 'Produit introuvable' })
 
     const body = req.body || {}
-    // on force l'id à correspondre à l'URL pour pas que le client puisse renommer
     body.id = req.params.id
 
-    const errors = validateProduct(body)
-    if (errors.length) {
-        return res.status(400).json({ error: 'champs invalides', details: errors })
+    if (!body.name || !body.description || !body.price) {
+        return res.status(400).json({ error: 'champs manquants' })
     }
 
-    // si pas de stock fourni dans la maj, on garde celui d'avant
-    if (!Array.isArray(body.stock)) {
-        body.stock = data.products[idx].stock
-    }
-    if (!body.currency) body.currency = data.products[idx].currency || 'EUR'
+    // si pas de stock dans la maj, on garde celui d'avant
+    if (!Array.isArray(body.stock)) body.stock = data.products[idx].stock
+    if (!body.currency) body.currency = 'EUR'
 
     data.products[idx] = body
     writeData(data)

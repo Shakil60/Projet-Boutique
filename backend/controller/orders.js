@@ -4,7 +4,7 @@ const path = require('path')
 const ordersFile = path.join(__dirname, '..', 'orders.json')
 const productsFile = path.join(__dirname, '..', 'data.json')
 
-const SHIPPING_FREE_THRESHOLD = 50
+const SHIPPING_FREE = 50
 const SHIPPING_COST = 4.90
 
 function readOrders() {
@@ -20,49 +20,37 @@ function writeProducts(d) {
     fs.writeFileSync(productsFile, JSON.stringify(d, null, 2), 'utf8')
 }
 
-// validation rapide d'une adresse de livraison
-function checkShipping(s) {
-    if (!s) return 'adresse manquante'
-    const required = ['name', 'address', 'city', 'zip', 'country', 'email']
-    for (const k of required) {
-        if (!s[k] || String(s[k]).trim() === '') return 'champ ' + k + ' manquant'
-    }
-    if (!/^.+@.+\..+$/.test(s.email)) return 'email invalide'
-    return null
-}
-
-// POST /orders — crée une commande à partir du panier qu'on reçoit dans le body
-// + adresse de livraison. nécessite d'être connecté.
+// POST /orders — crée une commande à partir du panier reçu
 exports.create = function (req, res) {
     const { items, shipping, promoCode } = req.body || {}
 
     if (!Array.isArray(items) || items.length === 0) {
         return res.status(400).json({ error: 'panier vide' })
     }
-    const shipErr = checkShipping(shipping)
-    if (shipErr) return res.status(400).json({ error: shipErr })
+    if (!shipping || !shipping.name || !shipping.address || !shipping.zip || !shipping.city || !shipping.email) {
+        return res.status(400).json({ error: 'adresse de livraison incomplète' })
+    }
 
     const products = readProducts()
-    const enrichedItems = []
+    const lines = []
     let subtotal = 0
 
-    // 1ère passe — on vérifie chaque ligne avant de toucher au stock
+    // TODO atomicité : si une ligne foire après les premières, le stock est
+    // déjà décrémenté pour celles avant. on accepte le risque pour le rendu.
     for (const it of items) {
         const p = products.products.find(pp => pp.id === it.id)
         if (!p) return res.status(400).json({ error: 'produit introuvable : ' + it.id })
 
         const variant = p.stock.find(v => v.color === it.color && v.size === it.size)
-        if (!variant) return res.status(400).json({ error: 'variante inconnue : ' + it.color + ' ' + it.size + ' (' + it.id + ')' })
+        if (!variant) return res.status(400).json({ error: 'variante inconnue' })
         if (variant.quantity < it.qty) {
-            return res.status(409).json({
-                error: 'stock insuffisant pour ' + p.name + ' (' + it.color + ' ' + it.size + ')',
-                remaining: variant.quantity
-            })
+            return res.status(409).json({ error: 'stock insuffisant pour ' + p.name })
         }
 
+        variant.quantity -= it.qty
         const lineTotal = p.price * it.qty
         subtotal += lineTotal
-        enrichedItems.push({
+        lines.push({
             productId: p.id,
             name: p.name,
             image: p.images[0],
@@ -74,26 +62,20 @@ exports.create = function (req, res) {
         })
     }
 
-    // appli code promo (très simple, en dur)
+    writeProducts(products)
+
+    // codes promo en dur (deux pour la démo)
     let discount = 0
     if (promoCode === 'MIRAGE10') discount = subtotal * 0.10
     else if (promoCode === 'WELCOME5') discount = 5
 
-    const shippingCost = subtotal >= SHIPPING_FREE_THRESHOLD ? 0 : SHIPPING_COST
-    const total = Math.max(0, subtotal - discount) + shippingCost
-
-    // 2nde passe — on décrémente vraiment maintenant qu'on est sûrs
-    for (const it of items) {
-        const p = products.products.find(pp => pp.id === it.id)
-        const variant = p.stock.find(v => v.color === it.color && v.size === it.size)
-        variant.quantity -= it.qty
-    }
-    writeProducts(products)
+    const shippingCost = subtotal >= SHIPPING_FREE ? 0 : SHIPPING_COST
+    const total = (subtotal - discount) + shippingCost
 
     const order = {
         id: 'ord-' + Date.now(),
         userId: req.user.id,
-        items: enrichedItems,
+        items: lines,
         shipping,
         subtotal: Number(subtotal.toFixed(2)),
         discount: Number(discount.toFixed(2)),
@@ -108,7 +90,7 @@ exports.create = function (req, res) {
     data.orders.push(order)
     writeOrders(data)
 
-    console.log('commande créée', order.id, 'pour', req.user.email, '— total', order.total)
+    console.log('commande', order.id, 'créée pour', req.user.email, '— total', order.total)
     res.status(201).json(order)
 }
 
@@ -121,7 +103,7 @@ exports.mine = function (req, res) {
     res.json(list)
 }
 
-// GET /orders/:id — détail d'une commande (owner ou admin)
+// GET /orders/:id — détail (owner ou admin)
 exports.getOne = function (req, res) {
     const data = readOrders()
     const order = data.orders.find(o => o.id === req.params.id)
@@ -132,9 +114,8 @@ exports.getOne = function (req, res) {
     res.json(order)
 }
 
-// GET /orders — admin uniquement, toutes les commandes
+// GET /orders — admin uniquement
 exports.getAll = function (req, res) {
     const data = readOrders()
-    const list = data.orders.sort((a, b) => b.createdAt.localeCompare(a.createdAt))
-    res.json(list)
+    res.json(data.orders.sort((a, b) => b.createdAt.localeCompare(a.createdAt)))
 }
