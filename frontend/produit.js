@@ -273,9 +273,10 @@ function onAddCart() {
 }
 
 // échappe le HTML pour éviter qu'une description avec un guillemet bizarre casse l'affichage
+// note : on utilise .replace avec regex au lieu de .replaceAll, sinon ça plante sur safari ios un peu vieux
 function escapeHtml(s) {
     return String(s)
-        .replaceAll('&', '&amp;')
-        .replaceAll('<', '&lt;')
-        .replaceAll('>', '&gt;')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
 }
