@@ -79,7 +79,7 @@ function render() {
     const p = state.product
 
     // description tronquée à 150 caractères, comme demandé dans l'énoncé
-    let desc = p.description
+    let desc = p.description || ''
     let toggleBtn = ''
     if (desc.length > 150 && !state.descExpanded) {
         desc = desc.slice(0, 150).trimEnd() + '…'
