@@ -29,18 +29,15 @@ Projet-Boutique/
 │  ├─ data.json                   # 20 produits, variantes, stocks
 │  ├─ users.json                  # comptes (1 admin par défaut)
 │  ├─ orders.json                 # commandes
-│  ├─ reviews.json                # avis produits
 │  ├─ package.json
 │  ├─ controller/
 │  │  ├─ shop.js                  # crud produits, filtres, tri, pagination, stock
 │  │  ├─ auth.js                  # signup, login, middleware
-│  │  ├─ orders.js                # création commande, historique
-│  │  └─ reviews.js               # avis : list, create, summary
+│  │  └─ orders.js                # création commande, historique
 │  └─ router/
 │     ├─ shop.js
 │     ├─ auth.js
-│     ├─ orders.js
-│     └─ reviews.js
+│     └─ orders.js
 ├─ frontend/
 │  ├─ index.html                  # catalogue
 │  ├─ produit.html                # détail produit (?id=…)
@@ -110,14 +107,13 @@ Si le port du backend change, ajuster `API_URL` en haut de `frontend/common.js`.
                  │  /products (POST..)  │  CRUD admin
                  │  /auth/...           │  signup, login, me
                  │  /orders             │  création, historique
-                 │  /products/:id/reviews
                  └──────────┬───────────┘
                             │  fs read/write
                             ▼
                  ┌──────────────────────┐
                  │  Fichiers JSON (data) │
                  │  data.json   users.json
-                 │  orders.json reviews.json
+                 │  orders.json
                  └──────────────────────┘
 
                  ┌──────────────────────┐
@@ -160,13 +156,6 @@ le header `X-User-Id` sur les routes protégées (pas de JWT, projet école).
 | `GET` | `/orders/me` | user | Historique de l'utilisateur courant. |
 | `GET` | `/orders/:id` | owner ou admin | Détail. |
 | `GET` | `/orders` | admin | Toutes les commandes. |
-
-### Avis
-
-| Méthode | Route | Auth | Description |
-|---|---|---|---|
-| `GET` | `/products/:id/reviews` | — | Liste des avis d'un produit. |
-| `POST` | `/products/:id/reviews` | user | Body : `{ rating, comment }`. Un avis par user/produit (réécrit le précédent). |
 
 ## Schémas des données
 
@@ -222,21 +211,6 @@ le header `X-User-Id` sur les routes protégées (pas de JWT, projet école).
 }
 ```
 
-### Review (`reviews.json`)
-
-```js
-{
-    id: "rev-1697...",
-    productId: "cosmic-wolf",
-    userId: "u-...",
-    userName: "Jean Test",
-    rating: 1..5,
-    comment: "...",                     // 5 à 600 caractères
-    createdAt: "2026-04-29T...",
-    updatedAt: "2026-04-29T..."         // si l'utilisateur a édité son avis
-}
-```
-
 ## Fonctionnalités
 
 - **Catalogue** : grille responsive, hover qui permute la 1re / 2e image,
@@ -248,7 +222,7 @@ le header `X-User-Id` sur les routes protégées (pas de JWT, projet école).
 - **Page produit** : carrousel d'images, description tronquée à 150 car. avec
   bouton « voir plus », sélection couleur (variantes obligatoires) et taille
   (rupture grisée), indication du stock, ajout panier, favoris, produits
-  similaires, **avis avec étoiles**.
+  similaires.
 - **Panier** : `localStorage`, modification quantité, suppression, sous-total,
   redirection vers checkout.
 - **Checkout** : formulaire livraison, récap, frais de port (offert dès 50 €,
