@@ -24,29 +24,14 @@ exports.create = function (req, res) {
     const { rating, comment } = req.body || {}
 
     const r = Number(rating)
-    if (!r || r < 1 || r > 5 || !Number.isInteger(r)) {
+    if (!r || r < 1 || r > 5) {
         return res.status(400).json({ error: 'note entre 1 et 5 requise' })
     }
     if (!comment || comment.trim().length < 5) {
-        return res.status(400).json({ error: 'commentaire trop court (5 caractères mini)' })
-    }
-    if (comment.length > 600) {
-        return res.status(400).json({ error: 'commentaire trop long (600 max)' })
+        return res.status(400).json({ error: 'commentaire trop court' })
     }
 
     const data = readReviews()
-
-    // un user, un avis par produit. si y'en a déjà un, on le met à jour plutôt
-    // que d'en créer un nouveau
-    const existing = data.reviews.find(rev => rev.productId === req.params.id && rev.userId === req.user.id)
-    if (existing) {
-        existing.rating = r
-        existing.comment = comment.trim()
-        existing.updatedAt = new Date().toISOString()
-        writeReviews(data)
-        return res.json(existing)
-    }
-
     const review = {
         id: 'rev-' + Date.now(),
         productId: req.params.id,
@@ -59,13 +44,4 @@ exports.create = function (req, res) {
     data.reviews.push(review)
     writeReviews(data)
     res.status(201).json(review)
-}
-
-// helper exporté pour la liste produits — moyenne des notes
-exports.summaryFor = function (productId) {
-    const data = readReviews()
-    const list = data.reviews.filter(r => r.productId === productId)
-    if (list.length === 0) return { count: 0, average: 0 }
-    const avg = list.reduce((s, r) => s + r.rating, 0) / list.length
-    return { count: list.length, average: Math.round(avg * 10) / 10 }
 }
