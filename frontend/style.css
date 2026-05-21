@@ -1367,6 +1367,12 @@ button:focus-visible,
     padding: 20px;
 }
 
+/* l'attribut [hidden] HTML est censé cacher l'élément mais notre display: flex
+   au-dessus le ré-affichait. on remet display: none quand hidden est présent. */
+.modal-backdrop[hidden] {
+    display: none;
+}
+
 .modal {
     background: var(--bg);
     border-radius: 6px;
