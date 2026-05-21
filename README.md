@@ -17,8 +17,6 @@ fichiers JSON pour la persistance.
 - [Stockage navigateur](#stockage-navigateur)
 - [Identifiants de démo](#identifiants-de-démo)
 - [Codes promo](#codes-promo)
-- [Bonus : pipeline IA](#bonus--pipeline-ia)
-- [Auteurs](#auteurs)
 
 ## Structure du dépôt
 
