@@ -1,14 +1,14 @@
 /* variables thème — surchargeables avec [data-theme="dark"] */
 :root {
-    --bg: var(--bg);
-    --bg-elev: var(--bg-elev);
-    --bg-soft: var(--bg-soft);
-    --bg-faint: var(--bg-faint);
-    --border: var(--border);
-    --border-soft: var(--border-soft);
-    --text: var(--text);
-    --text-muted: var(--text-muted);
-    --text-soft: var(--text-soft);
+    --bg: #f5f2ea;
+    --bg-elev: #ffffff;
+    --bg-soft: #ece5d2;
+    --bg-faint: #fafaf6;
+    --border: #e5dfd2;
+    --border-soft: #f0ebde;
+    --text: #1a1814;
+    --text-muted: #6b6357;
+    --text-soft: #2e2a25;
     --shadow: rgba(0, 0, 0, 0.08);
 }
 
