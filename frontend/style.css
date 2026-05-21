@@ -1023,6 +1023,10 @@ button:focus-visible,
     .cart-row .remove {
         grid-column: 2;
     }
+    .cart-row .qty input {
+        width: 50px;
+        padding: 6px 4px;
+    }
 }
 
 .cart-summary {
