@@ -1,31 +1,1863 @@
 {
-  "items": [
+  "products": [
     {
-      "id": 1,
-      "name": "Item 1",
-      "price": 100,
-      "description": "Description of Item 1",
-      "image": "../static/images/item1.jpg",
-      "category": "Games",
-      "stock": 10
+      "id": "cosmic-wolf",
+      "name": "Cosmic Wolf",
+      "description": "Un loup spectral traverse une nébuleuse violette, le regard fixé sur quelque chose qu'on ne verra jamais. Print full front imprimé en sérigraphie numérique haute densité, finition mate qui ne brille pas au flash. Le verso reste sobre, juste un petit logo MIRAGE en bas à droite. Coupe oversized boxy, coton bio qui vieillit bien et ne se déforme pas au lavage.",
+      "price": 34.9,
+      "currency": "EUR",
+      "gender": "unisexe",
+      "type": "graphique",
+      "fit": "oversized",
+      "material": "Coton bio 220 g/m²",
+      "colors": [
+        "noir",
+        "blanc",
+        "sand"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "images": [
+        "https://picsum.photos/seed/cosmic-wolf-1/600/750",
+        "https://picsum.photos/seed/cosmic-wolf-2/600/750",
+        "https://picsum.photos/seed/cosmic-wolf-3/600/750"
+      ],
+      "stock": [
+        {
+          "color": "noir",
+          "size": "S",
+          "quantity": 8
+        },
+        {
+          "color": "noir",
+          "size": "M",
+          "quantity": 14
+        },
+        {
+          "color": "noir",
+          "size": "L",
+          "quantity": 16
+        },
+        {
+          "color": "noir",
+          "size": "XL",
+          "quantity": 11
+        },
+        {
+          "color": "noir",
+          "size": "XXL",
+          "quantity": 5
+        },
+        {
+          "color": "blanc",
+          "size": "S",
+          "quantity": 6
+        },
+        {
+          "color": "blanc",
+          "size": "M",
+          "quantity": 12
+        },
+        {
+          "color": "blanc",
+          "size": "L",
+          "quantity": 13
+        },
+        {
+          "color": "blanc",
+          "size": "XL",
+          "quantity": 9
+        },
+        {
+          "color": "blanc",
+          "size": "XXL",
+          "quantity": 4
+        },
+        {
+          "color": "sand",
+          "size": "S",
+          "quantity": 5
+        },
+        {
+          "color": "sand",
+          "size": "M",
+          "quantity": 10
+        },
+        {
+          "color": "sand",
+          "size": "L",
+          "quantity": 11
+        },
+        {
+          "color": "sand",
+          "size": "XL",
+          "quantity": 7
+        },
+        {
+          "color": "sand",
+          "size": "XXL",
+          "quantity": 3
+        }
+      ]
     },
     {
-      "id": 2,
-      "name": "Item 2",
-      "price": 200,
-      "description": "Description of Item 2",
-      "image": "../static/images/item2.jpg",
-      "category": "Games",
-      "stock": 15
+      "id": "neon-mirage",
+      "name": "Neon Mirage",
+      "description": "Un horizon de gratte-ciels noyé dans un brouillard rose électrique, comme une carte postale d'un futur qui n'existe pas. Drop limité numéroté à 200 pièces, chaque tee porte son numéro à l'intérieur du col. Encres fluo qui réagissent à la lumière UV, ça reste discret en journée et change de visage en soirée. Coupe oversized, coton bio 240g un peu plus dense.",
+      "price": 39.9,
+      "currency": "EUR",
+      "gender": "unisexe",
+      "type": "graphique",
+      "fit": "oversized",
+      "material": "Coton bio 240 g/m²",
+      "colors": [
+        "noir",
+        "blanc",
+        "sand"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "images": [
+        "https://picsum.photos/seed/neon-mirage-1/600/750",
+        "https://picsum.photos/seed/neon-mirage-2/600/750",
+        "https://picsum.photos/seed/neon-mirage-3/600/750"
+      ],
+      "stock": [
+        {
+          "color": "noir",
+          "size": "S",
+          "quantity": 4
+        },
+        {
+          "color": "noir",
+          "size": "M",
+          "quantity": 7
+        },
+        {
+          "color": "noir",
+          "size": "L",
+          "quantity": 8
+        },
+        {
+          "color": "noir",
+          "size": "XL",
+          "quantity": 5
+        },
+        {
+          "color": "noir",
+          "size": "XXL",
+          "quantity": 2
+        },
+        {
+          "color": "blanc",
+          "size": "S",
+          "quantity": 3
+        },
+        {
+          "color": "blanc",
+          "size": "M",
+          "quantity": 5
+        },
+        {
+          "color": "blanc",
+          "size": "L",
+          "quantity": 6
+        },
+        {
+          "color": "blanc",
+          "size": "XL",
+          "quantity": 4
+        },
+        {
+          "color": "blanc",
+          "size": "XXL",
+          "quantity": 1
+        },
+        {
+          "color": "sand",
+          "size": "S",
+          "quantity": 2
+        },
+        {
+          "color": "sand",
+          "size": "M",
+          "quantity": 5
+        },
+        {
+          "color": "sand",
+          "size": "L",
+          "quantity": 5
+        },
+        {
+          "color": "sand",
+          "size": "XL",
+          "quantity": 3
+        },
+        {
+          "color": "sand",
+          "size": "XXL",
+          "quantity": 0
+        }
+      ]
     },
     {
-      "id": 3,
-      "name": "Item 3",
-      "price": 300,
-      "description": "Description of Item 3",
-      "image": "../static/images/item3.jpg",
-      "category": "Games",
-      "stock": 20
+      "id": "digital-ghost",
+      "name": "Digital Ghost",
+      "description": "Une silhouette qui se dissout en bandes de pixels, comme un signal qui décroche. Le print est imprimé en deux passes : une couche blanche pour la base, une couche noire par-dessus, et c'est ce qui donne ce rendu profond même sur les tees blancs. Coupe regular, plus près du corps que nos oversized, parfait à porter seul ou en couche sous une chemise.",
+      "price": 34.9,
+      "currency": "EUR",
+      "gender": "unisexe",
+      "type": "graphique",
+      "fit": "regular",
+      "material": "Coton bio 220 g/m²",
+      "colors": [
+        "noir",
+        "blanc"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "images": [
+        "https://picsum.photos/seed/digital-ghost-1/600/750",
+        "https://picsum.photos/seed/digital-ghost-2/600/750"
+      ],
+      "stock": [
+        {
+          "color": "noir",
+          "size": "S",
+          "quantity": 9
+        },
+        {
+          "color": "noir",
+          "size": "M",
+          "quantity": 17
+        },
+        {
+          "color": "noir",
+          "size": "L",
+          "quantity": 19
+        },
+        {
+          "color": "noir",
+          "size": "XL",
+          "quantity": 13
+        },
+        {
+          "color": "noir",
+          "size": "XXL",
+          "quantity": 6
+        },
+        {
+          "color": "blanc",
+          "size": "S",
+          "quantity": 7
+        },
+        {
+          "color": "blanc",
+          "size": "M",
+          "quantity": 14
+        },
+        {
+          "color": "blanc",
+          "size": "L",
+          "quantity": 15
+        },
+        {
+          "color": "blanc",
+          "size": "XL",
+          "quantity": 10
+        },
+        {
+          "color": "blanc",
+          "size": "XXL",
+          "quantity": 5
+        }
+      ]
+    },
+    {
+      "id": "crimson-tide",
+      "name": "Crimson Tide",
+      "description": "Un océan rouge sous un ciel orageux, le tout en mouvement. Inspiré des affiches de cinéma japonais des années 70 qu'on regardait étant gosses. Print recto seul, le dos est nu. Coupe regular taillée homme, épaules un peu plus larges que le standard. Un classique du catalogue qu'on réimprime en continu depuis le lancement.",
+      "price": 34.9,
+      "currency": "EUR",
+      "gender": "homme",
+      "type": "graphique",
+      "fit": "regular",
+      "material": "Coton bio 220 g/m²",
+      "colors": [
+        "noir",
+        "blanc",
+        "sand"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "images": [
+        "https://picsum.photos/seed/crimson-tide-1/600/750",
+        "https://picsum.photos/seed/crimson-tide-2/600/750",
+        "https://picsum.photos/seed/crimson-tide-3/600/750"
+      ],
+      "stock": [
+        {
+          "color": "noir",
+          "size": "S",
+          "quantity": 10
+        },
+        {
+          "color": "noir",
+          "size": "M",
+          "quantity": 18
+        },
+        {
+          "color": "noir",
+          "size": "L",
+          "quantity": 20
+        },
+        {
+          "color": "noir",
+          "size": "XL",
+          "quantity": 14
+        },
+        {
+          "color": "noir",
+          "size": "XXL",
+          "quantity": 7
+        },
+        {
+          "color": "blanc",
+          "size": "S",
+          "quantity": 8
+        },
+        {
+          "color": "blanc",
+          "size": "M",
+          "quantity": 15
+        },
+        {
+          "color": "blanc",
+          "size": "L",
+          "quantity": 16
+        },
+        {
+          "color": "blanc",
+          "size": "XL",
+          "quantity": 11
+        },
+        {
+          "color": "blanc",
+          "size": "XXL",
+          "quantity": 5
+        },
+        {
+          "color": "sand",
+          "size": "S",
+          "quantity": 6
+        },
+        {
+          "color": "sand",
+          "size": "M",
+          "quantity": 12
+        },
+        {
+          "color": "sand",
+          "size": "L",
+          "quantity": 13
+        },
+        {
+          "color": "sand",
+          "size": "XL",
+          "quantity": 9
+        },
+        {
+          "color": "sand",
+          "size": "XXL",
+          "quantity": 4
+        }
+      ]
+    },
+    {
+      "id": "lunar-drift",
+      "name": "Lunar Drift",
+      "description": "Un croissant de lune posé sur une ligne d'horizon, rien d'autre. Print en sérigraphie blanche ou noire selon la couleur du tee. On l'a sorti volontairement épuré, à contre-pied du reste du catalogue. Coupe oversized, coton bio 220g, idéal pour les premières chaleurs de printemps. Le sable et le blanc, pas de noir sur ce design — ça rendait moins bien aux essais.",
+      "price": 29.9,
+      "currency": "EUR",
+      "gender": "unisexe",
+      "type": "minimal",
+      "fit": "oversized",
+      "material": "Coton bio 220 g/m²",
+      "colors": [
+        "blanc",
+        "sand"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "images": [
+        "https://picsum.photos/seed/lunar-drift-1/600/750",
+        "https://picsum.photos/seed/lunar-drift-2/600/750"
+      ],
+      "stock": [
+        {
+          "color": "blanc",
+          "size": "S",
+          "quantity": 11
+        },
+        {
+          "color": "blanc",
+          "size": "M",
+          "quantity": 19
+        },
+        {
+          "color": "blanc",
+          "size": "L",
+          "quantity": 21
+        },
+        {
+          "color": "blanc",
+          "size": "XL",
+          "quantity": 14
+        },
+        {
+          "color": "blanc",
+          "size": "XXL",
+          "quantity": 6
+        },
+        {
+          "color": "sand",
+          "size": "S",
+          "quantity": 9
+        },
+        {
+          "color": "sand",
+          "size": "M",
+          "quantity": 16
+        },
+        {
+          "color": "sand",
+          "size": "L",
+          "quantity": 18
+        },
+        {
+          "color": "sand",
+          "size": "XL",
+          "quantity": 12
+        },
+        {
+          "color": "sand",
+          "size": "XXL",
+          "quantity": 5
+        }
+      ]
+    },
+    {
+      "id": "pixel-garden",
+      "name": "Pixel Garden",
+      "description": "Un jardin tropical entièrement composé de gros pixels colorés, mi-jeu vidéo de Game Boy mi-rêve d'enfant. Coupe cropped femme, la longueur s'arrête juste au-dessus de la taille. Print recto pleine taille, encres saturées qui ne fade pas. Le coton bio 220g a une douceur dès le premier porter. Attention, la coupe taille petit, on conseille de prendre une taille au-dessus en cas de doute.",
+      "price": 34.9,
+      "currency": "EUR",
+      "gender": "femme",
+      "type": "graphique",
+      "fit": "cropped",
+      "material": "Coton bio 220 g/m²",
+      "colors": [
+        "noir",
+        "blanc",
+        "sand"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "images": [
+        "https://picsum.photos/seed/pixel-garden-1/600/750",
+        "https://picsum.photos/seed/pixel-garden-2/600/750",
+        "https://picsum.photos/seed/pixel-garden-3/600/750"
+      ],
+      "stock": [
+        {
+          "color": "noir",
+          "size": "S",
+          "quantity": 12
+        },
+        {
+          "color": "noir",
+          "size": "M",
+          "quantity": 16
+        },
+        {
+          "color": "noir",
+          "size": "L",
+          "quantity": 14
+        },
+        {
+          "color": "noir",
+          "size": "XL",
+          "quantity": 8
+        },
+        {
+          "color": "noir",
+          "size": "XXL",
+          "quantity": 3
+        },
+        {
+          "color": "blanc",
+          "size": "S",
+          "quantity": 10
+        },
+        {
+          "color": "blanc",
+          "size": "M",
+          "quantity": 14
+        },
+        {
+          "color": "blanc",
+          "size": "L",
+          "quantity": 12
+        },
+        {
+          "color": "blanc",
+          "size": "XL",
+          "quantity": 6
+        },
+        {
+          "color": "blanc",
+          "size": "XXL",
+          "quantity": 2
+        },
+        {
+          "color": "sand",
+          "size": "S",
+          "quantity": 8
+        },
+        {
+          "color": "sand",
+          "size": "M",
+          "quantity": 11
+        },
+        {
+          "color": "sand",
+          "size": "L",
+          "quantity": 9
+        },
+        {
+          "color": "sand",
+          "size": "XL",
+          "quantity": 4
+        },
+        {
+          "color": "sand",
+          "size": "XXL",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "velvet-dawn",
+      "name": "Velvet Dawn",
+      "description": "Un lever de soleil pâle sur une mer immobile, ambiance presque pastel, presque silencieuse. Drop limité 150 pièces, numéroté à l'intérieur du col. Coupe cropped, coton bio 240g un peu plus épais que le reste du catalogue, plus proche d'un sweat léger. Le print utilise des tons doux et une finition velours au toucher, c'est ce qui a donné son nom au design.",
+      "price": 39.9,
+      "currency": "EUR",
+      "gender": "femme",
+      "type": "graphique",
+      "fit": "cropped",
+      "material": "Coton bio 240 g/m²",
+      "colors": [
+        "noir",
+        "blanc",
+        "sand"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "images": [
+        "https://picsum.photos/seed/velvet-dawn-1/600/750",
+        "https://picsum.photos/seed/velvet-dawn-2/600/750",
+        "https://picsum.photos/seed/velvet-dawn-3/600/750"
+      ],
+      "stock": [
+        {
+          "color": "noir",
+          "size": "S",
+          "quantity": 5
+        },
+        {
+          "color": "noir",
+          "size": "M",
+          "quantity": 7
+        },
+        {
+          "color": "noir",
+          "size": "L",
+          "quantity": 6
+        },
+        {
+          "color": "noir",
+          "size": "XL",
+          "quantity": 3
+        },
+        {
+          "color": "noir",
+          "size": "XXL",
+          "quantity": 1
+        },
+        {
+          "color": "blanc",
+          "size": "S",
+          "quantity": 4
+        },
+        {
+          "color": "blanc",
+          "size": "M",
+          "quantity": 6
+        },
+        {
+          "color": "blanc",
+          "size": "L",
+          "quantity": 5
+        },
+        {
+          "color": "blanc",
+          "size": "XL",
+          "quantity": 2
+        },
+        {
+          "color": "blanc",
+          "size": "XXL",
+          "quantity": 0
+        },
+        {
+          "color": "sand",
+          "size": "S",
+          "quantity": 3
+        },
+        {
+          "color": "sand",
+          "size": "M",
+          "quantity": 5
+        },
+        {
+          "color": "sand",
+          "size": "L",
+          "quantity": 4
+        },
+        {
+          "color": "sand",
+          "size": "XL",
+          "quantity": 2
+        },
+        {
+          "color": "sand",
+          "size": "XXL",
+          "quantity": 0
+        }
+      ]
+    },
+    {
+      "id": "static-bloom",
+      "name": "Static Bloom",
+      "description": "Une fleur qui pousse au milieu d'un écran de TV cassée, fond gris bruité, pétales tranchés par les lignes de scan. C'est le design qui a lancé le projet à la base, on l'a gardé sans rien changer depuis le premier batch. Coupe oversized standard, print recto. Le verso porte une petite typo blanche en bas du dos, presque invisible.",
+      "price": 34.9,
+      "currency": "EUR",
+      "gender": "unisexe",
+      "type": "graphique",
+      "fit": "oversized",
+      "material": "Coton bio 220 g/m²",
+      "colors": [
+        "noir",
+        "blanc",
+        "sand"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "images": [
+        "https://picsum.photos/seed/static-bloom-1/600/750",
+        "https://picsum.photos/seed/static-bloom-2/600/750",
+        "https://picsum.photos/seed/static-bloom-3/600/750"
+      ],
+      "stock": [
+        {
+          "color": "noir",
+          "size": "S",
+          "quantity": 7
+        },
+        {
+          "color": "noir",
+          "size": "M",
+          "quantity": 13
+        },
+        {
+          "color": "noir",
+          "size": "L",
+          "quantity": 15
+        },
+        {
+          "color": "noir",
+          "size": "XL",
+          "quantity": 10
+        },
+        {
+          "color": "noir",
+          "size": "XXL",
+          "quantity": 4
+        },
+        {
+          "color": "blanc",
+          "size": "S",
+          "quantity": 0
+        },
+        {
+          "color": "blanc",
+          "size": "M",
+          "quantity": 11
+        },
+        {
+          "color": "blanc",
+          "size": "L",
+          "quantity": 12
+        },
+        {
+          "color": "blanc",
+          "size": "XL",
+          "quantity": 8
+        },
+        {
+          "color": "blanc",
+          "size": "XXL",
+          "quantity": 3
+        },
+        {
+          "color": "sand",
+          "size": "S",
+          "quantity": 4
+        },
+        {
+          "color": "sand",
+          "size": "M",
+          "quantity": 9
+        },
+        {
+          "color": "sand",
+          "size": "L",
+          "quantity": 10
+        },
+        {
+          "color": "sand",
+          "size": "XL",
+          "quantity": 6
+        },
+        {
+          "color": "sand",
+          "size": "XXL",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": "hollow-sun",
+      "name": "Hollow Sun",
+      "description": "Un cercle vide au centre du tee, encadré par une typo en demi-cercle qui dit STILL HERE. Inspiré des t-shirts de groupe noise des années 90 qu'on a tous eus à un moment. Coupe regular un peu près du corps, coton bio 220g. Disponible uniquement en sable, le contraste avec le print noir donne mieux qu'avec les autres coloris du catalogue.",
+      "price": 29.9,
+      "currency": "EUR",
+      "gender": "unisexe",
+      "type": "minimal",
+      "fit": "regular",
+      "material": "Coton bio 220 g/m²",
+      "colors": [
+        "sand"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "images": [
+        "https://picsum.photos/seed/hollow-sun-1/600/750",
+        "https://picsum.photos/seed/hollow-sun-2/600/750"
+      ],
+      "stock": [
+        {
+          "color": "sand",
+          "size": "S",
+          "quantity": 13
+        },
+        {
+          "color": "sand",
+          "size": "M",
+          "quantity": 21
+        },
+        {
+          "color": "sand",
+          "size": "L",
+          "quantity": 23
+        },
+        {
+          "color": "sand",
+          "size": "XL",
+          "quantity": 16
+        },
+        {
+          "color": "sand",
+          "size": "XXL",
+          "quantity": 8
+        }
+      ]
+    },
+    {
+      "id": "echo-valley",
+      "name": "Echo Valley",
+      "description": "Une vallée brumeuse vue depuis un sommet, on devine à peine les cimes en dessous. Print qui couvre tout le devant en dégradé bleu-vert, encres à base d'eau pour ne pas alourdir le tissu. Coupe oversized boxy, coton bio 220g. Un de ceux qui passe le mieux sur le sand selon nous, mais le noir le rend plus dramatique.",
+      "price": 34.9,
+      "currency": "EUR",
+      "gender": "unisexe",
+      "type": "graphique",
+      "fit": "oversized",
+      "material": "Coton bio 220 g/m²",
+      "colors": [
+        "noir",
+        "blanc",
+        "sand"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "images": [
+        "https://picsum.photos/seed/echo-valley-1/600/750",
+        "https://picsum.photos/seed/echo-valley-2/600/750",
+        "https://picsum.photos/seed/echo-valley-3/600/750"
+      ],
+      "stock": [
+        {
+          "color": "noir",
+          "size": "S",
+          "quantity": 6
+        },
+        {
+          "color": "noir",
+          "size": "M",
+          "quantity": 12
+        },
+        {
+          "color": "noir",
+          "size": "L",
+          "quantity": 14
+        },
+        {
+          "color": "noir",
+          "size": "XL",
+          "quantity": 9
+        },
+        {
+          "color": "noir",
+          "size": "XXL",
+          "quantity": 4
+        },
+        {
+          "color": "blanc",
+          "size": "S",
+          "quantity": 5
+        },
+        {
+          "color": "blanc",
+          "size": "M",
+          "quantity": 10
+        },
+        {
+          "color": "blanc",
+          "size": "L",
+          "quantity": 11
+        },
+        {
+          "color": "blanc",
+          "size": "XL",
+          "quantity": 7
+        },
+        {
+          "color": "blanc",
+          "size": "XXL",
+          "quantity": 3
+        },
+        {
+          "color": "sand",
+          "size": "S",
+          "quantity": 7
+        },
+        {
+          "color": "sand",
+          "size": "M",
+          "quantity": 13
+        },
+        {
+          "color": "sand",
+          "size": "L",
+          "quantity": 14
+        },
+        {
+          "color": "sand",
+          "size": "XL",
+          "quantity": 9
+        },
+        {
+          "color": "sand",
+          "size": "XXL",
+          "quantity": 4
+        }
+      ]
+    },
+    {
+      "id": "phantom-loop",
+      "name": "Phantom Loop",
+      "description": "Le mot PHANTOM répété en boucle qui forme un anneau au centre du tee, typo grasse condensée. Pas de visuel, juste le texte. Print recto, encre blanche ou noire selon le tee. Coupe oversized, coton bio 220g. Le minimal qu'on a sorti pour ceux qui n'aiment pas les gros visuels mais veulent quand même un truc identifié MIRAGE.",
+      "price": 29.9,
+      "currency": "EUR",
+      "gender": "unisexe",
+      "type": "typo",
+      "fit": "oversized",
+      "material": "Coton bio 220 g/m²",
+      "colors": [
+        "noir",
+        "blanc"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "images": [
+        "https://picsum.photos/seed/phantom-loop-1/600/750",
+        "https://picsum.photos/seed/phantom-loop-2/600/750"
+      ],
+      "stock": [
+        {
+          "color": "noir",
+          "size": "S",
+          "quantity": 12
+        },
+        {
+          "color": "noir",
+          "size": "M",
+          "quantity": 20
+        },
+        {
+          "color": "noir",
+          "size": "L",
+          "quantity": 22
+        },
+        {
+          "color": "noir",
+          "size": "XL",
+          "quantity": 15
+        },
+        {
+          "color": "noir",
+          "size": "XXL",
+          "quantity": 7
+        },
+        {
+          "color": "blanc",
+          "size": "S",
+          "quantity": 10
+        },
+        {
+          "color": "blanc",
+          "size": "M",
+          "quantity": 17
+        },
+        {
+          "color": "blanc",
+          "size": "L",
+          "quantity": 18
+        },
+        {
+          "color": "blanc",
+          "size": "XL",
+          "quantity": 12
+        },
+        {
+          "color": "blanc",
+          "size": "XXL",
+          "quantity": 5
+        }
+      ]
+    },
+    {
+      "id": "iris-code",
+      "name": "Iris Code",
+      "description": "Une suite de chiffres et de symboles qui forment le mot IRIS, façon code source qui s'autoréférence. Print recto en lignes verticales, encre fine. Coupe regular pour celles et ceux qui n'aiment pas trop l'oversized. On change la séquence de symboles à chaque réimpression, du coup deux tees ne sont jamais strictement identiques.",
+      "price": 29.9,
+      "currency": "EUR",
+      "gender": "unisexe",
+      "type": "typo",
+      "fit": "regular",
+      "material": "Coton bio 220 g/m²",
+      "colors": [
+        "noir",
+        "blanc",
+        "sand"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "images": [
+        "https://picsum.photos/seed/iris-code-1/600/750",
+        "https://picsum.photos/seed/iris-code-2/600/750"
+      ],
+      "stock": [
+        {
+          "color": "noir",
+          "size": "S",
+          "quantity": 9
+        },
+        {
+          "color": "noir",
+          "size": "M",
+          "quantity": 16
+        },
+        {
+          "color": "noir",
+          "size": "L",
+          "quantity": 18
+        },
+        {
+          "color": "noir",
+          "size": "XL",
+          "quantity": 12
+        },
+        {
+          "color": "noir",
+          "size": "XXL",
+          "quantity": 5
+        },
+        {
+          "color": "blanc",
+          "size": "S",
+          "quantity": 8
+        },
+        {
+          "color": "blanc",
+          "size": "M",
+          "quantity": 14
+        },
+        {
+          "color": "blanc",
+          "size": "L",
+          "quantity": 15
+        },
+        {
+          "color": "blanc",
+          "size": "XL",
+          "quantity": 10
+        },
+        {
+          "color": "blanc",
+          "size": "XXL",
+          "quantity": 4
+        },
+        {
+          "color": "sand",
+          "size": "S",
+          "quantity": 6
+        },
+        {
+          "color": "sand",
+          "size": "M",
+          "quantity": 11
+        },
+        {
+          "color": "sand",
+          "size": "L",
+          "quantity": 12
+        },
+        {
+          "color": "sand",
+          "size": "XL",
+          "quantity": 8
+        },
+        {
+          "color": "sand",
+          "size": "XXL",
+          "quantity": 3
+        }
+      ]
+    },
+    {
+      "id": "slow-motion",
+      "name": "Slow Motion",
+      "description": "Le titre SLOW MOTION en grandes lettres étirées sur tout le devant, comme si elles étaient en train de fondre vers le bas. Pas de visuel autour, juste la typo. Print recto, encre opaque. Coupe oversized, coton bio 220g. On l'a sorti après une nuit de boulot un peu trop longue, le nom est venu tout seul à un moment.",
+      "price": 29.9,
+      "currency": "EUR",
+      "gender": "unisexe",
+      "type": "typo",
+      "fit": "oversized",
+      "material": "Coton bio 220 g/m²",
+      "colors": [
+        "noir",
+        "blanc"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "images": [
+        "https://picsum.photos/seed/slow-motion-1/600/750",
+        "https://picsum.photos/seed/slow-motion-2/600/750"
+      ],
+      "stock": [
+        {
+          "color": "noir",
+          "size": "S",
+          "quantity": 11
+        },
+        {
+          "color": "noir",
+          "size": "M",
+          "quantity": 18
+        },
+        {
+          "color": "noir",
+          "size": "L",
+          "quantity": 20
+        },
+        {
+          "color": "noir",
+          "size": "XL",
+          "quantity": 13
+        },
+        {
+          "color": "noir",
+          "size": "XXL",
+          "quantity": 6
+        },
+        {
+          "color": "blanc",
+          "size": "S",
+          "quantity": 9
+        },
+        {
+          "color": "blanc",
+          "size": "M",
+          "quantity": 15
+        },
+        {
+          "color": "blanc",
+          "size": "L",
+          "quantity": 16
+        },
+        {
+          "color": "blanc",
+          "size": "XL",
+          "quantity": 10
+        },
+        {
+          "color": "blanc",
+          "size": "XXL",
+          "quantity": 4
+        }
+      ]
+    },
+    {
+      "id": "sapphire-dust",
+      "name": "Sapphire Dust",
+      "description": "Une explosion de poussière bleu saphir sur fond clair, mouvement figé en plein milieu de l'expansion. Coupe cropped, longueur courte, manches courtes resserrées. Print recto centré. Coton bio 220g, finition douce. Disponible uniquement en blanc et sable, le bleu du print perdait trop de contraste sur le noir.",
+      "price": 34.9,
+      "currency": "EUR",
+      "gender": "femme",
+      "type": "graphique",
+      "fit": "cropped",
+      "material": "Coton bio 220 g/m²",
+      "colors": [
+        "blanc",
+        "sand"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "images": [
+        "https://picsum.photos/seed/sapphire-dust-1/600/750",
+        "https://picsum.photos/seed/sapphire-dust-2/600/750",
+        "https://picsum.photos/seed/sapphire-dust-3/600/750"
+      ],
+      "stock": [
+        {
+          "color": "blanc",
+          "size": "S",
+          "quantity": 9
+        },
+        {
+          "color": "blanc",
+          "size": "M",
+          "quantity": 14
+        },
+        {
+          "color": "blanc",
+          "size": "L",
+          "quantity": 12
+        },
+        {
+          "color": "blanc",
+          "size": "XL",
+          "quantity": 6
+        },
+        {
+          "color": "blanc",
+          "size": "XXL",
+          "quantity": 2
+        },
+        {
+          "color": "sand",
+          "size": "S",
+          "quantity": 7
+        },
+        {
+          "color": "sand",
+          "size": "M",
+          "quantity": 11
+        },
+        {
+          "color": "sand",
+          "size": "L",
+          "quantity": 10
+        },
+        {
+          "color": "sand",
+          "size": "XL",
+          "quantity": 5
+        },
+        {
+          "color": "sand",
+          "size": "XXL",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "midnight-bloom",
+      "name": "Midnight Bloom",
+      "description": "Une floraison nocturne, fleurs noires et bleu nuit qui s'ouvrent sur un fond profond. Print full front, encres haute densité, finition mate. Coupe oversized, coton bio 220g. Ce design rend particulièrement bien sur le tee noir — on a hésité à le faire en exclusivité noire avant de le sortir aussi en blanc et sable.",
+      "price": 34.9,
+      "currency": "EUR",
+      "gender": "unisexe",
+      "type": "graphique",
+      "fit": "oversized",
+      "material": "Coton bio 220 g/m²",
+      "colors": [
+        "noir",
+        "blanc",
+        "sand"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "images": [
+        "https://picsum.photos/seed/midnight-bloom-1/600/750",
+        "https://picsum.photos/seed/midnight-bloom-2/600/750",
+        "https://picsum.photos/seed/midnight-bloom-3/600/750"
+      ],
+      "stock": [
+        {
+          "color": "noir",
+          "size": "S",
+          "quantity": 9
+        },
+        {
+          "color": "noir",
+          "size": "M",
+          "quantity": 16
+        },
+        {
+          "color": "noir",
+          "size": "L",
+          "quantity": 18
+        },
+        {
+          "color": "noir",
+          "size": "XL",
+          "quantity": 12
+        },
+        {
+          "color": "noir",
+          "size": "XXL",
+          "quantity": 6
+        },
+        {
+          "color": "blanc",
+          "size": "S",
+          "quantity": 5
+        },
+        {
+          "color": "blanc",
+          "size": "M",
+          "quantity": 10
+        },
+        {
+          "color": "blanc",
+          "size": "L",
+          "quantity": 11
+        },
+        {
+          "color": "blanc",
+          "size": "XL",
+          "quantity": 7
+        },
+        {
+          "color": "blanc",
+          "size": "XXL",
+          "quantity": 2
+        },
+        {
+          "color": "sand",
+          "size": "S",
+          "quantity": 4
+        },
+        {
+          "color": "sand",
+          "size": "M",
+          "quantity": 8
+        },
+        {
+          "color": "sand",
+          "size": "L",
+          "quantity": 9
+        },
+        {
+          "color": "sand",
+          "size": "XL",
+          "quantity": 5
+        },
+        {
+          "color": "sand",
+          "size": "XXL",
+          "quantity": 0
+        }
+      ]
+    },
+    {
+      "id": "soft-static",
+      "name": "Soft Static",
+      "description": "Un rectangle de bruit télévisé dégradé, posé en bas à gauche du tee. Le reste est nu. Très peu de matière imprimée, c'est un design qui se porte plus comme un tee uni avec un détail. Coupe oversized, coton bio 220g. On le sort en blanc et sable parce que le bruit gris se voit mal sur un fond noir.",
+      "price": 29.9,
+      "currency": "EUR",
+      "gender": "unisexe",
+      "type": "minimal",
+      "fit": "oversized",
+      "material": "Coton bio 220 g/m²",
+      "colors": [
+        "blanc",
+        "sand"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "images": [
+        "https://picsum.photos/seed/soft-static-1/600/750",
+        "https://picsum.photos/seed/soft-static-2/600/750"
+      ],
+      "stock": [
+        {
+          "color": "blanc",
+          "size": "S",
+          "quantity": 10
+        },
+        {
+          "color": "blanc",
+          "size": "M",
+          "quantity": 18
+        },
+        {
+          "color": "blanc",
+          "size": "L",
+          "quantity": 19
+        },
+        {
+          "color": "blanc",
+          "size": "XL",
+          "quantity": 13
+        },
+        {
+          "color": "blanc",
+          "size": "XXL",
+          "quantity": 6
+        },
+        {
+          "color": "sand",
+          "size": "S",
+          "quantity": 8
+        },
+        {
+          "color": "sand",
+          "size": "M",
+          "quantity": 14
+        },
+        {
+          "color": "sand",
+          "size": "L",
+          "quantity": 15
+        },
+        {
+          "color": "sand",
+          "size": "XL",
+          "quantity": 10
+        },
+        {
+          "color": "sand",
+          "size": "XXL",
+          "quantity": 4
+        }
+      ]
+    },
+    {
+      "id": "faded-halo",
+      "name": "Faded Halo",
+      "description": "Un halo doré à moitié effacé, comme une lumière qui s'éteint doucement. Print recto centré, finition métallique légère qu'on aperçoit sous certains angles. Coupe regular. Coton bio 220g standard. Un bon entre-deux pour celles et ceux qui trouvent l'oversized trop ample mais ne veulent pas du fitted classique.",
+      "price": 34.9,
+      "currency": "EUR",
+      "gender": "unisexe",
+      "type": "graphique",
+      "fit": "regular",
+      "material": "Coton bio 220 g/m²",
+      "colors": [
+        "noir",
+        "blanc",
+        "sand"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "images": [
+        "https://picsum.photos/seed/faded-halo-1/600/750",
+        "https://picsum.photos/seed/faded-halo-2/600/750",
+        "https://picsum.photos/seed/faded-halo-3/600/750"
+      ],
+      "stock": [
+        {
+          "color": "noir",
+          "size": "S",
+          "quantity": 8
+        },
+        {
+          "color": "noir",
+          "size": "M",
+          "quantity": 15
+        },
+        {
+          "color": "noir",
+          "size": "L",
+          "quantity": 17
+        },
+        {
+          "color": "noir",
+          "size": "XL",
+          "quantity": 11
+        },
+        {
+          "color": "noir",
+          "size": "XXL",
+          "quantity": 5
+        },
+        {
+          "color": "blanc",
+          "size": "S",
+          "quantity": 7
+        },
+        {
+          "color": "blanc",
+          "size": "M",
+          "quantity": 13
+        },
+        {
+          "color": "blanc",
+          "size": "L",
+          "quantity": 14
+        },
+        {
+          "color": "blanc",
+          "size": "XL",
+          "quantity": 9
+        },
+        {
+          "color": "blanc",
+          "size": "XXL",
+          "quantity": 3
+        },
+        {
+          "color": "sand",
+          "size": "S",
+          "quantity": 5
+        },
+        {
+          "color": "sand",
+          "size": "M",
+          "quantity": 10
+        },
+        {
+          "color": "sand",
+          "size": "L",
+          "quantity": 12
+        },
+        {
+          "color": "sand",
+          "size": "XL",
+          "quantity": 7
+        },
+        {
+          "color": "sand",
+          "size": "XXL",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": "mercury-skin",
+      "name": "Mercury Skin",
+      "description": "Un visage humain à la texture liquide argentée, ambiance sci-fi 80s. Drop limité 100 pièces. Coupe regular taillée homme, épaules larges. Coton bio 240g, plus dense, plus structuré. Print recto en encre métallique, le verso reçoit une signature numérotée en sérigraphie. Disponible noir et sable uniquement, le blanc effaçait le détail du visage.",
+      "price": 39.9,
+      "currency": "EUR",
+      "gender": "homme",
+      "type": "graphique",
+      "fit": "regular",
+      "material": "Coton bio 240 g/m²",
+      "colors": [
+        "noir",
+        "sand"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "images": [
+        "https://picsum.photos/seed/mercury-skin-1/600/750",
+        "https://picsum.photos/seed/mercury-skin-2/600/750",
+        "https://picsum.photos/seed/mercury-skin-3/600/750"
+      ],
+      "stock": [
+        {
+          "color": "noir",
+          "size": "S",
+          "quantity": 3
+        },
+        {
+          "color": "noir",
+          "size": "M",
+          "quantity": 5
+        },
+        {
+          "color": "noir",
+          "size": "L",
+          "quantity": 6
+        },
+        {
+          "color": "noir",
+          "size": "XL",
+          "quantity": 4
+        },
+        {
+          "color": "noir",
+          "size": "XXL",
+          "quantity": 1
+        },
+        {
+          "color": "sand",
+          "size": "S",
+          "quantity": 2
+        },
+        {
+          "color": "sand",
+          "size": "M",
+          "quantity": 4
+        },
+        {
+          "color": "sand",
+          "size": "L",
+          "quantity": 5
+        },
+        {
+          "color": "sand",
+          "size": "XL",
+          "quantity": 3
+        },
+        {
+          "color": "sand",
+          "size": "XXL",
+          "quantity": 0
+        }
+      ]
+    },
+    {
+      "id": "ocean-static",
+      "name": "Ocean Static",
+      "description": "Une mer immobile vue d'en haut, surface entièrement composée de bruit gris. C'est plat, c'est calme, c'est un peu inquiétant. Print full front, encres à base d'eau. Coupe oversized boxy, coton bio 220g. Ce design vient d'une photo prise pendant un vol au-dessus de l'Atlantique, retravaillée jusqu'à plus reconnaître quoi que ce soit.",
+      "price": 34.9,
+      "currency": "EUR",
+      "gender": "unisexe",
+      "type": "graphique",
+      "fit": "oversized",
+      "material": "Coton bio 220 g/m²",
+      "colors": [
+        "noir",
+        "blanc",
+        "sand"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "images": [
+        "https://picsum.photos/seed/ocean-static-1/600/750",
+        "https://picsum.photos/seed/ocean-static-2/600/750",
+        "https://picsum.photos/seed/ocean-static-3/600/750"
+      ],
+      "stock": [
+        {
+          "color": "noir",
+          "size": "S",
+          "quantity": 7
+        },
+        {
+          "color": "noir",
+          "size": "M",
+          "quantity": 14
+        },
+        {
+          "color": "noir",
+          "size": "L",
+          "quantity": 16
+        },
+        {
+          "color": "noir",
+          "size": "XL",
+          "quantity": 11
+        },
+        {
+          "color": "noir",
+          "size": "XXL",
+          "quantity": 5
+        },
+        {
+          "color": "blanc",
+          "size": "S",
+          "quantity": 6
+        },
+        {
+          "color": "blanc",
+          "size": "M",
+          "quantity": 12
+        },
+        {
+          "color": "blanc",
+          "size": "L",
+          "quantity": 13
+        },
+        {
+          "color": "blanc",
+          "size": "XL",
+          "quantity": 8
+        },
+        {
+          "color": "blanc",
+          "size": "XXL",
+          "quantity": 3
+        },
+        {
+          "color": "sand",
+          "size": "S",
+          "quantity": 5
+        },
+        {
+          "color": "sand",
+          "size": "M",
+          "quantity": 10
+        },
+        {
+          "color": "sand",
+          "size": "L",
+          "quantity": 11
+        },
+        {
+          "color": "sand",
+          "size": "XL",
+          "quantity": 7
+        },
+        {
+          "color": "sand",
+          "size": "XXL",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": "glass-dragon",
+      "name": "Glass Dragon",
+      "description": "Un dragon en verre fragmenté, la lumière passe à travers ses écailles et projette des reflets bleus partout autour. Drop limité 200 pièces, numéroté. Coupe oversized, coton bio 240g, plus structuré que notre 220g habituel. Print full front extrêmement détaillé, dos imprimé d'une seule écaille en gros plan. Notre design préféré du catalogue.",
+      "price": 39.9,
+      "currency": "EUR",
+      "gender": "unisexe",
+      "type": "graphique",
+      "fit": "oversized",
+      "material": "Coton bio 240 g/m²",
+      "colors": [
+        "noir",
+        "blanc",
+        "sand"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "images": [
+        "https://picsum.photos/seed/glass-dragon-1/600/750",
+        "https://picsum.photos/seed/glass-dragon-2/600/750",
+        "https://picsum.photos/seed/glass-dragon-3/600/750"
+      ],
+      "stock": [
+        {
+          "color": "noir",
+          "size": "S",
+          "quantity": 4
+        },
+        {
+          "color": "noir",
+          "size": "M",
+          "quantity": 8
+        },
+        {
+          "color": "noir",
+          "size": "L",
+          "quantity": 9
+        },
+        {
+          "color": "noir",
+          "size": "XL",
+          "quantity": 6
+        },
+        {
+          "color": "noir",
+          "size": "XXL",
+          "quantity": 2
+        },
+        {
+          "color": "blanc",
+          "size": "S",
+          "quantity": 3
+        },
+        {
+          "color": "blanc",
+          "size": "M",
+          "quantity": 6
+        },
+        {
+          "color": "blanc",
+          "size": "L",
+          "quantity": 7
+        },
+        {
+          "color": "blanc",
+          "size": "XL",
+          "quantity": 4
+        },
+        {
+          "color": "blanc",
+          "size": "XXL",
+          "quantity": 1
+        },
+        {
+          "color": "sand",
+          "size": "S",
+          "quantity": 2
+        },
+        {
+          "color": "sand",
+          "size": "M",
+          "quantity": 5
+        },
+        {
+          "color": "sand",
+          "size": "L",
+          "quantity": 5
+        },
+        {
+          "color": "sand",
+          "size": "XL",
+          "quantity": 3
+        },
+        {
+          "color": "sand",
+          "size": "XXL",
+          "quantity": 0
+        }
+      ]
     }
   ]
 }
