@@ -1,4 +1,4 @@
-// page admin — gérer les produits (créer, modifier, supprimer)
+// page admin - gérer les produits (créer, modifier, supprimer)
 
 // si on n'est pas admin on dégage tout de suite
 if (!isAdmin()) {

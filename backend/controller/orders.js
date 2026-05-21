@@ -20,7 +20,7 @@ function writeProducts(d) {
     fs.writeFileSync(productsFile, JSON.stringify(d, null, 2), 'utf8')
 }
 
-// POST /orders — crée une commande à partir du panier reçu
+// POST /orders - crée une commande à partir du panier reçu
 exports.create = function (req, res) {
     const { items, shipping, promoCode } = req.body || {}
 
@@ -90,11 +90,11 @@ exports.create = function (req, res) {
     data.orders.push(order)
     writeOrders(data)
 
-    console.log('commande', order.id, 'créée pour', req.user.email, '— total', order.total)
+    console.log('commande', order.id, 'créée pour', req.user.email, '- total', order.total)
     res.status(201).json(order)
 }
 
-// GET /orders/me — commandes de l'utilisateur connecté
+// GET /orders/me - commandes de l'utilisateur connecté
 exports.mine = function (req, res) {
     const data = readOrders()
     const list = data.orders
@@ -103,7 +103,7 @@ exports.mine = function (req, res) {
     res.json(list)
 }
 
-// GET /orders/:id — détail (owner ou admin)
+// GET /orders/:id - détail (owner ou admin)
 exports.getOne = function (req, res) {
     const data = readOrders()
     const order = data.orders.find(o => o.id === req.params.id)
@@ -114,7 +114,7 @@ exports.getOne = function (req, res) {
     res.json(order)
 }
 
-// GET /orders — admin uniquement
+// GET /orders - admin uniquement
 exports.getAll = function (req, res) {
     const data = readOrders()
     res.json(data.orders.sort((a, b) => b.createdAt.localeCompare(a.createdAt)))

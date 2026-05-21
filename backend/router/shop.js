@@ -16,7 +16,7 @@ router.get('/products/:id/similar', shop.getSimilar)
 // MAJ du stock d'une variante après un achat
 router.patch('/products/:id/stock', shop.updateStock)
 
-// routes admin — protégées par requireAdmin
+// routes admin - protégées par requireAdmin
 router.post('/products', auth.requireAdmin, shop.create)
 router.put('/products/:id', auth.requireAdmin, shop.update)
 router.delete('/products/:id', auth.requireAdmin, shop.remove)

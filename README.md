@@ -1,4 +1,4 @@
-# MIRAGE — Y-Shop
+# MIRAGE - Y-Shop
 
 Projet de fin de module Challenge JS (Ynov Aix). Boutique de t-shirts streetwear
 en édition courte, dont les prints sont des designs « dreamcore » générés par IA.
@@ -51,7 +51,7 @@ Projet-Boutique/
 │  ├─ common.js                   # helpers partagés (panier, fav, auth, recherche, thème)
 │  ├─ script.js                   # logique catalogue
 │  ├─ produit.js · panier.js · favoris.js · checkout.js · commandes.js · admin.js · auth.js
-├─ automation/                    # bonus oral — pipeline IA Gemini + Imagen + Cloudinary + Printful
+├─ automation/                    # bonus oral - pipeline IA Gemini + Imagen + Cloudinary + Printful
 └─ README.md
 ```
 
@@ -73,13 +73,13 @@ Le serveur écoute sur `http://localhost:3000`. Il affiche
 Le frontend est purement statique. Plusieurs options pour le servir :
 
 ```bash
-# Option A — extension Live Server dans VS Code (clic droit sur frontend/index.html)
+# Option A - extension Live Server dans VS Code (clic droit sur frontend/index.html)
 
-# Option B — serveur Python intégré
+# Option B - serveur Python intégré
 cd frontend
 python3 -m http.server 8080
 
-# Option C — npx serve
+# Option C - npx serve
 npx serve frontend
 ```
 
@@ -129,10 +129,10 @@ Si le port du backend change, ajuster `API_URL` en haut de `frontend/common.js`.
 
 | Méthode | Route | Auth | Description |
 |---|---|---|---|
-| `GET` | `/products` | — | Liste. Filtres : `gender`, `type`, `color`, `size`, `minPrice`, `maxPrice`, `search`. Tri : `sort=price_asc \| price_desc \| name`. Pagination : `limit` + `offset` (renvoie `{ items, total, hasMore }`). |
-| `GET` | `/products/:id` | — | Détail d'un produit. |
-| `GET` | `/products/:id/similar` | — | Jusqu'à 4 produits similaires. |
-| `PATCH` | `/products/:id/stock` | — | Décrémente le stock d'une variante. Body : `{ color, size, qty }`. |
+| `GET` | `/products` | - | Liste. Filtres : `gender`, `type`, `color`, `size`, `minPrice`, `maxPrice`, `search`. Tri : `sort=price_asc \| price_desc \| name`. Pagination : `limit` + `offset` (renvoie `{ items, total, hasMore }`). |
+| `GET` | `/products/:id` | - | Détail d'un produit. |
+| `GET` | `/products/:id/similar` | - | Jusqu'à 4 produits similaires. |
+| `PATCH` | `/products/:id/stock` | - | Décrémente le stock d'une variante. Body : `{ color, size, qty }`. |
 | `POST` | `/products` | admin | Crée un produit. |
 | `PUT` | `/products/:id` | admin | Remplace un produit complet. |
 | `DELETE` | `/products/:id` | admin | Supprime un produit. |
@@ -141,8 +141,8 @@ Si le port du backend change, ajuster `API_URL` en haut de `frontend/common.js`.
 
 | Méthode | Route | Auth | Description |
 |---|---|---|---|
-| `POST` | `/auth/signup` | — | `{ email, password, name }` → `{ token, user }`. |
-| `POST` | `/auth/login` | — | `{ email, password }` → `{ token, user }`. |
+| `POST` | `/auth/signup` | - | `{ email, password, name }` → `{ token, user }`. |
+| `POST` | `/auth/login` | - | `{ email, password }` → `{ token, user }`. |
 | `GET` | `/auth/me` | user | Renvoie l'utilisateur courant. |
 
 Le « token » renvoyé est l'`id` utilisateur. Le front l'envoie ensuite dans
@@ -283,4 +283,4 @@ En mode réel : Gemini 3 Flash (texte) + Imagen 4 (image) + Cloudinary
 
 ## Auteurs
 
-Projet réalisé en binôme dans le cadre du module Challenge JS — Ynov Aix.
+Projet réalisé en binôme dans le cadre du module Challenge JS - Ynov Aix.

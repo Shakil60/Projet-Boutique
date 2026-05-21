@@ -51,7 +51,7 @@ exports.signup = function (req, res) {
     data.users.push(user)
     writeUsers(data)
 
-    // le "token" c'est juste l'id user — on n'a pas mis de JWT, c'est un projet école
+    // le "token" c'est juste l'id user - on n'a pas mis de JWT, c'est un projet école
     res.json({ token: user.id, user: publicUser(user) })
 }
 
@@ -73,7 +73,7 @@ exports.login = function (req, res) {
     res.json({ token: user.id, user: publicUser(user) })
 }
 
-// GET /auth/me — renvoie le user courant si l'header X-User-Id est présent et valide
+// GET /auth/me - renvoie le user courant si l'header X-User-Id est présent et valide
 exports.me = function (req, res) {
     const userId = req.headers['x-user-id']
     if (!userId) return res.status(401).json({ error: 'non connecté' })

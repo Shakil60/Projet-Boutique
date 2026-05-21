@@ -32,7 +32,7 @@ if (!theme) {
 
 const useReal = !forceMock && !!process.env.GEMINI_API_KEY
 
-console.log(useReal ? '[mode] réel — Gemini activé' : '[mode] mock — pas d\'appel API')
+console.log(useReal ? '[mode] réel - Gemini activé' : '[mode] mock - pas d\'appel API')
 console.log('[thème]', theme)
 
 run().catch(err => {
@@ -41,11 +41,11 @@ run().catch(err => {
 })
 
 async function run() {
-    // 1+2 — meta produit (nom + description)
+    // 1+2 - meta produit (nom + description)
     const meta = useReal ? await metaWithGemini(theme) : metaMock(theme)
     console.log('[design]', meta.name, '(' + meta.slug + ')')
 
-    // 3+4 — image
+    // 3+4 - image
     const productsDir = path.join(__dirname, '..', 'frontend', 'img', 'products')
     fs.mkdirSync(productsDir, { recursive: true })
     const imagePath = path.join(productsDir, meta.slug + '-1.jpg')
@@ -59,7 +59,7 @@ async function run() {
     }
     console.log('[image]', path.relative(process.cwd(), imagePath))
 
-    // 5 — catalogue
+    // 5 - catalogue
     const added = appendToCatalog(meta)
     if (added) {
         console.log('[catalogue] produit ajouté à backend/data.json')

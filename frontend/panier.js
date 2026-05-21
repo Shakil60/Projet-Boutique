@@ -1,4 +1,4 @@
-// page panier — affichage des lignes, modif qty, suppression, validation
+// page panier - affichage des lignes, modif qty, suppression, validation
 
 const area = document.getElementById('cart-area')
 const sub = document.getElementById('sub')

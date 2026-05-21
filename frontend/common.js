@@ -1,4 +1,4 @@
-// utilitaires partagés entre toutes les pages — panier, favoris, fetch, badges
+// utilitaires partagés entre toutes les pages - panier, favoris, fetch, badges
 
 const API_URL = 'http://localhost:3000'
 
@@ -186,7 +186,7 @@ function updateHeaderAuth() {
     const u = currentUser()
     if (u) {
         slot.innerHTML = `
-            <a href="./commandes.html" title="${u.name} — voir mes commandes">${u.name.split(' ')[0]}</a>
+            <a href="./commandes.html" title="${u.name} - voir mes commandes">${u.name.split(' ')[0]}</a>
             ${u.role === 'admin' ? '<a href="./admin.html" class="nav-admin">admin</a>' : ''}
             <button class="nav-logout" data-action="logout">déconnexion</button>
         `

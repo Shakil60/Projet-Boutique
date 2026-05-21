@@ -14,7 +14,7 @@ function writeData(data) {
     fs.writeFileSync(dataFile, JSON.stringify(data, null, 2), 'utf8')
 }
 
-// GET /products — renvoie la liste, avec filtres optionnels en query string
+// GET /products - renvoie la liste, avec filtres optionnels en query string
 exports.getAll = function (req, res) {
     const data = readData()
     let list = data.products.slice()
@@ -50,7 +50,7 @@ exports.getAll = function (req, res) {
     else if (q.sort === 'price_desc') list.sort((a, b) => b.price - a.price)
     else if (q.sort === 'name') list.sort((a, b) => a.name.localeCompare(b.name))
 
-    // pagination — si limit est fourni, on renvoie un objet avec total + items + hasMore.
+    // pagination - si limit est fourni, on renvoie un objet avec total + items + hasMore.
     // sinon on garde le comportement initial (juste un tableau).
     if (q.limit) {
         const limit = Math.max(1, Math.min(100, Number(q.limit)))
@@ -80,7 +80,7 @@ exports.getOne = function (req, res) {
     res.json(prod)
 }
 
-// GET /products/:id/similar — sortie : 4 produits maxi qui partagent le type
+// GET /products/:id/similar - sortie : 4 produits maxi qui partagent le type
 // ou à défaut le gender. On évite de proposer le produit lui-même.
 exports.getSimilar = function (req, res) {
     const data = readData()
@@ -104,7 +104,7 @@ exports.getSimilar = function (req, res) {
     res.json(similar)
 }
 
-// PATCH /products/:id/stock — body : { color, size, qty }
+// PATCH /products/:id/stock - body : { color, size, qty }
 // On retire qty au stock de la variante donnée. Renvoie le stock restant.
 exports.updateStock = function (req, res) {
     const data = readData()
@@ -135,7 +135,7 @@ exports.updateStock = function (req, res) {
 
 // ---- routes admin ----
 
-// POST /products — admin seulement
+// POST /products - admin seulement
 exports.create = function (req, res) {
     const data = readData()
     const body = req.body || {}
@@ -163,7 +163,7 @@ exports.create = function (req, res) {
     res.status(201).json(body)
 }
 
-// PUT /products/:id — remplace le produit complet (admin)
+// PUT /products/:id - remplace le produit complet (admin)
 exports.update = function (req, res) {
     const data = readData()
     const idx = data.products.findIndex(p => p.id === req.params.id)
@@ -185,7 +185,7 @@ exports.update = function (req, res) {
     res.json(body)
 }
 
-// DELETE /products/:id — admin
+// DELETE /products/:id - admin
 exports.remove = function (req, res) {
     const data = readData()
     const before = data.products.length

@@ -1,4 +1,4 @@
-// page mes commandes — liste les commandes du user, met en évidence celle qui
+// page mes commandes - liste les commandes du user, met en évidence celle qui
 // vient d'être passée si on arrive avec ?id=ord-xxxx
 
 if (!isLoggedIn()) {

@@ -1,4 +1,4 @@
-# automation/ — pipeline IA pour MIRAGE
+# automation/ - pipeline IA pour MIRAGE
 
 Bonus du projet Y-Shop. Petit script CLI qui ajoute un nouveau t-shirt
 au catalogue à partir d'un simple thème (ex : « forêt cybernétique »,
@@ -37,13 +37,13 @@ locales sans cramer du quota.
 node generate.js --theme "néons de Tokyo"
 ```
 
-Aucune dépendance npm n'est nécessaire — on utilise les modules natifs
+Aucune dépendance npm n'est nécessaire - on utilise les modules natifs
 `https`, `fs`, `path`. Pas besoin de `npm install` dans ce dossier.
 
 ## Limites
 
 - Une seule image (`-1`) générée par design. La 2e image (verso ou porté)
-  demanderait un second appel Imagen — facile à brancher mais on a pas eu
+  demanderait un second appel Imagen - facile à brancher mais on a pas eu
   le temps.
 - Les images vivent uniquement en local. Pour un vrai pipeline POD, il
   faudrait les uploader sur un host public (S3, Cloudinary…) avant de

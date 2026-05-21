@@ -1,4 +1,4 @@
-// page favoris — on ne stocke que les ids en localStorage, du coup ici on doit
+// page favoris - on ne stocke que les ids en localStorage, du coup ici on doit
 // refetch chaque produit pour avoir les infos à jour (prix, image…)
 // TODO ajouter une petite anim quand on retire un favori, ça fait un peu sec
 

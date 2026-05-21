@@ -1,4 +1,4 @@
-// page produit — détail, carrousel, variantes, ajout panier, similaires
+// page produit - détail, carrousel, variantes, ajout panier, similaires
 
 const root = document.getElementById('root')
 const similarSection = document.getElementById('similar-section')
@@ -117,7 +117,7 @@ function render() {
                 <p class="desc">${escapeHtml(desc)} ${toggleBtn}</p>
 
                 <div class="variant-group">
-                    <div class="label">Couleur — <strong>${state.selectedColor}</strong></div>
+                    <div class="label">Couleur - <strong>${state.selectedColor}</strong></div>
                     <div class="colors">
                         ${p.colors.map(c => `
                             <button class="swatch ${c === state.selectedColor ? 'selected' : ''}" data-color="${c}" aria-label="${c}"></button>

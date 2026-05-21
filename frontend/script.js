@@ -1,4 +1,4 @@
-// page catalogue — récupère la liste produits, gère filtres, tri, pagination
+// page catalogue - récupère la liste produits, gère filtres, tri, pagination
 
 const PAGE_SIZE = 12
 

@@ -1,4 +1,4 @@
-// page checkout — formulaire livraison + récap panier + création commande
+// page checkout - formulaire livraison + récap panier + création commande
 
 const area = document.getElementById('checkout-area')
 
@@ -46,7 +46,7 @@ function render() {
                 </div>
 
                 <div class="form-error" id="error" hidden></div>
-                <button type="submit" class="btn btn-block" id="submit">Passer la commande — ${formatPrice(total)}</button>
+                <button type="submit" class="btn btn-block" id="submit">Passer la commande - ${formatPrice(total)}</button>
             </form>
 
             <aside class="checkout-summary">
@@ -108,7 +108,7 @@ async function onSubmit(e) {
             })
         })
         clearCart()
-        showToast('Commande passée — merci !')
+        showToast('Commande passée - merci !')
         setTimeout(() => location.href = './commandes.html?id=' + order.id, 600)
     } catch (err) {
         const msg = err.body?.error || err.message || 'erreur de validation'
