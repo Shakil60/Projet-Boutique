@@ -267,20 +267,3 @@ N'importe quel autre compte se crée via la page `inscription.html`.
 | `WELCOME5` | -5 € fixes |
 
 À taper sur la page `checkout.html`, champ « code promo ».
-
-## Bonus : pipeline IA
-
-Voir `automation/README.md`. En résumé :
-
-```bash
-cd automation
-node generate.js --theme "spectres polaires" --mock   # ajoute un produit auto
-node push-pod.js --id <slug>                           # simule push Printful
-```
-
-En mode réel : Gemini 3 Flash (texte) + Imagen 4 (image) + Cloudinary
-(hébergement) + Printful (POD).
-
-## Auteurs
-
-Projet réalisé en binôme dans le cadre du module Challenge JS - Ynov Aix.
