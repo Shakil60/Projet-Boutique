@@ -2,96 +2,22 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MIRAGE - catalogue</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique Gaming</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+    <main>
+        <section class="hero">
+            <h1>Bienvenue sur la boutique</h1>
+            <p>Decouvrez une selection simple de produits gaming disponible directement depuis votre serveur local.</p>
+        </section>
 
-<header class="site-header">
-    <div class="inner">
-        <a href="./index.html" class="brand">
-            MIRAGE<span class="tag">wear the dream.</span>
-        </a>
-        <nav class="nav">
-            <a href="./index.html">Catalogue</a>
-            <a href="./favoris.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="16" height="16" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg> Favoris<span class="badge empty" data-badge="fav">0</span></a>
-            <a href="./panier.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="16" height="16" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg> Panier<span class="badge empty" data-badge="cart">0</span></a>
-            <span class="nav-auth" data-auth-slot></span>
-        </nav>
-    </div>
-</header>
-
-<main class="page">
-    <h1 class="page-title">Catalogue</h1>
-    <p class="page-sub">T-shirts streetwear, prints en édition courte. <span id="count"></span></p>
-
-    <div class="toolbar">
-        <div class="group">
-            <label for="f-gender">Genre</label>
-            <select id="f-gender">
-                <option value="">tous</option>
-                <option value="unisexe">unisexe</option>
-                <option value="femme">femme</option>
-                <option value="homme">homme</option>
-            </select>
-        </div>
-        <div class="group">
-            <label for="f-type">Type</label>
-            <select id="f-type">
-                <option value="">tous</option>
-                <option value="graphique">graphique</option>
-                <option value="typo">typo</option>
-                <option value="minimal">minimal</option>
-            </select>
-        </div>
-        <div class="group">
-            <label for="f-color">Couleur</label>
-            <select id="f-color">
-                <option value="">toutes</option>
-                <option value="noir">noir</option>
-                <option value="blanc">blanc</option>
-                <option value="sand">sand</option>
-            </select>
-        </div>
-        <div class="group">
-            <label for="f-size">Taille</label>
-            <select id="f-size">
-                <option value="">toutes</option>
-                <option value="S">S</option>
-                <option value="M">M</option>
-                <option value="L">L</option>
-                <option value="XL">XL</option>
-                <option value="XXL">XXL</option>
-            </select>
-        </div>
-        <div class="group price-range">
-            <label for="f-min">Prix</label>
-            <input type="number" id="f-min" placeholder="min" min="0" aria-label="prix minimum">
-            <span aria-hidden="true">-</span>
-            <input type="number" id="f-max" placeholder="max" min="0" aria-label="prix maximum">
-        </div>
-        <div class="group">
-            <label for="f-sort">Trier</label>
-            <select id="f-sort">
-                <option value="">par défaut</option>
-                <option value="price_asc">prix croissant</option>
-                <option value="price_desc">prix décroissant</option>
-                <option value="name">nom A-Z</option>
-            </select>
-        </div>
-        <button class="reset" id="reset">tout réinitialiser</button>
-    </div>
-
-    <div class="grid" id="grid"></div>
-    <div class="empty-state" id="empty" hidden>Aucun produit ne correspond à ces filtres.</div>
-</main>
-
-<footer class="site-footer">
-    © MIRAGE - projet Y-Shop
-</footer>
-
-<script src="./common.js"></script>
-<script src="./script.js"></script>
+        <section>
+            <p class="status" id="status">Chargement des produits...</p>
+            <div class="items" id="items"></div>
+        </section>
+    </main>
+    <script src="./script.js"></script>
 </body>
 </html>
